@@ -289,40 +289,22 @@ export default function App() {
         </section>
 
         {/* SECTION 2: PROFESSIONAL TRAJECTORY */}
-        <section id="trajectory" className="space-y-10 scroll-mt-24 relative overflow-hidden rounded-3xl border border-neutral-200/60 dark:border-neutral-900/80 bg-neutral-50/15 dark:bg-[#07070a]/25 p-6 md:p-10 lg:p-12 shadow-sm transition-all duration-500">
-          
-          {/* Holographic Physics-based Ribbon Trails Backdrop */}
-          <div className="absolute inset-0 z-0 opacity-40 dark:opacity-60 pointer-events-none overflow-hidden rounded-3xl">
-            <Ribbons
-              colors={darkMode ? ['#10b981', '#059669', '#34d399'] : ['#2563eb', '#3b82f6', '#60a5fa']}
-              baseSpring={0.015}
-              baseFriction={0.92}
-              baseThickness={18}
-              offsetFactor={0.03}
-              maxAge={800}
-              pointCount={50}
-              speedMultiplier={0.4}
-              enableFade={true}
-              enableShaderEffect={true}
+        <section id="trajectory" className="space-y-10 scroll-mt-24">
+          <div className="space-y-2 border-b border-border-color pb-4">
+            <span className="text-xs font-mono font-bold text-text-secondary tracking-widest uppercase block">
+              01 // Professional Path
+            </span>
+            <SplitText
+              text="Professional Trajectory"
+              tag="h2"
+              className="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary"
+              delay={30}
+              duration={0.7}
+              from={{ opacity: 0, y: 15 }}
+              to={{ opacity: 1, y: 0 }}
+              textAlign="left"
             />
           </div>
-
-          <div className="relative z-10 space-y-10 w-full">
-            <div className="space-y-2 border-b border-border-color pb-4">
-              <span className="text-xs font-mono font-bold text-text-secondary tracking-widest uppercase block">
-                01 // Professional Path
-              </span>
-              <SplitText
-                text="Professional Trajectory"
-                tag="h2"
-                className="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary"
-                delay={30}
-                duration={0.7}
-                from={{ opacity: 0, y: 15 }}
-                to={{ opacity: 1, y: 0 }}
-                textAlign="left"
-              />
-            </div>
 
           <div className="space-y-12">
             {EXPERIENCE_DATA.map((exp, idx) => (
@@ -443,44 +425,25 @@ export default function App() {
               </div>
             ))}
           </div>
-          </div>
         </section>
 
         {/* SECTION 2.5: ACHIEVEMENTS & LEADERSHIP */}
-        <section id="achievements" className="space-y-10 scroll-mt-24 relative overflow-hidden rounded-3xl border border-neutral-200/60 dark:border-neutral-900/80 bg-neutral-50/15 dark:bg-[#07070a]/25 p-6 md:p-10 lg:p-12 shadow-sm transition-all duration-500">
-          
-          {/* Holographic Physics-based Ribbon Trails Backdrop */}
-          <div className="absolute inset-0 z-0 opacity-40 dark:opacity-60 pointer-events-none overflow-hidden rounded-3xl">
-            <Ribbons
-              colors={darkMode ? ['#10b981', '#059669', '#34d399'] : ['#2563eb', '#3b82f6', '#60a5fa']}
-              baseSpring={0.015}
-              baseFriction={0.92}
-              baseThickness={18}
-              offsetFactor={0.03}
-              maxAge={800}
-              pointCount={50}
-              speedMultiplier={0.4}
-              enableFade={true}
-              enableShaderEffect={true}
+        <section id="achievements" className="space-y-10 scroll-mt-24">
+          <div className="space-y-2 border-b border-border-color pb-4">
+            <span className="text-xs font-mono font-bold text-text-secondary tracking-widest uppercase block">
+              01.5 // Distinguished Impact
+            </span>
+            <SplitText
+              text="Achievements & Leadership"
+              tag="h2"
+              className="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary"
+              delay={35}
+              duration={0.7}
+              from={{ opacity: 0, y: 15 }}
+              to={{ opacity: 1, y: 0 }}
+              textAlign="left"
             />
           </div>
-
-          <div className="relative z-10 space-y-10 w-full">
-            <div className="space-y-2 border-b border-border-color pb-4">
-              <span className="text-xs font-mono font-bold text-text-secondary tracking-widest uppercase block">
-                01.5 // Distinguished Impact
-              </span>
-              <SplitText
-                text="Achievements & Leadership"
-                tag="h2"
-                className="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary"
-                delay={35}
-                duration={0.7}
-                from={{ opacity: 0, y: 15 }}
-                to={{ opacity: 1, y: 0 }}
-                textAlign="left"
-              />
-            </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {ACHIEVEMENTS_DATA.map((ach, idx) => (
@@ -536,41 +499,23 @@ export default function App() {
         </section>
 
         {/* SECTION 3: CORE COMPETENCIES & TECH STACK (THE BLUEPRINT) */}
-        <section id="blueprint" className="space-y-10 scroll-mt-24 relative overflow-hidden rounded-3xl border border-neutral-200/60 dark:border-neutral-900/80 bg-neutral-50/15 dark:bg-[#07070a]/25 p-6 md:p-10 lg:p-12 shadow-sm transition-all duration-500">
-          
-          {/* Holographic Physics-based Ribbon Trails Backdrop */}
-          <div className="absolute inset-0 z-0 opacity-40 dark:opacity-60 pointer-events-none overflow-hidden rounded-3xl">
-            <Ribbons
-              colors={darkMode ? ['#10b981', '#059669', '#34d399'] : ['#2563eb', '#3b82f6', '#60a5fa']}
-              baseSpring={0.015}
-              baseFriction={0.92}
-              baseThickness={18}
-              offsetFactor={0.03}
-              maxAge={800}
-              pointCount={50}
-              speedMultiplier={0.4}
-              enableFade={true}
-              enableShaderEffect={true}
-            />
-          </div>
-
-          <div className="relative z-10 space-y-10 w-full">
-            <div className="space-y-3 border-b border-border-color pb-4 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-              <div className="space-y-2">
-                <span className="text-xs font-mono font-bold text-text-secondary tracking-widest uppercase block">
-                  02 // Framework Matrix
-                </span>
-                <SplitText
-                  text="The Blueprint (Core Competencies)"
-                  tag="h2"
-                  className="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary"
-                  delay={25}
-                  duration={0.7}
-                  from={{ opacity: 0, y: 15 }}
-                  to={{ opacity: 1, y: 0 }}
-                  textAlign="left"
-                />
-              </div>
+        <section id="blueprint" className="space-y-10 scroll-mt-24">
+          <div className="space-y-3 border-b border-border-color pb-4 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div className="space-y-2">
+              <span className="text-xs font-mono font-bold text-text-secondary tracking-widest uppercase block">
+                02 // Framework Matrix
+              </span>
+              <SplitText
+                text="The Blueprint (Core Competencies)"
+                tag="h2"
+                className="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary"
+                delay={25}
+                duration={0.7}
+                from={{ opacity: 0, y: 15 }}
+                to={{ opacity: 1, y: 0 }}
+                textAlign="left"
+              />
+            </div>
             <a 
               href="https://github.com/ahmadrayan-create"
               target="_blank"
@@ -634,45 +579,26 @@ export default function App() {
               );
             })}
           </div>
-          </div>
         </section>
 
         {/* SECTION 4: FLAGSHIP VENTURES & SEMESTER PROJECTS (THE PROOF) */}
-        <section id="proof" className="space-y-10 scroll-mt-24 relative overflow-hidden rounded-3xl border border-neutral-200/60 dark:border-neutral-900/80 bg-neutral-50/15 dark:bg-[#07070a]/25 p-6 md:p-10 lg:p-12 shadow-sm transition-all duration-500">
-          
-          {/* Holographic Physics-based Ribbon Trails Backdrop */}
-          <div className="absolute inset-0 z-0 opacity-40 dark:opacity-60 pointer-events-none overflow-hidden rounded-3xl">
-            <Ribbons
-              colors={darkMode ? ['#10b981', '#059669', '#34d399'] : ['#2563eb', '#3b82f6', '#60a5fa']}
-              baseSpring={0.015}
-              baseFriction={0.92}
-              baseThickness={18}
-              offsetFactor={0.03}
-              maxAge={800}
-              pointCount={50}
-              speedMultiplier={0.4}
-              enableFade={true}
-              enableShaderEffect={true}
-            />
-          </div>
-
-          <div className="relative z-10 space-y-10 w-full">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-border-color pb-4">
-              <div className="space-y-2">
-                <span className="text-xs font-mono font-bold text-text-secondary tracking-widest uppercase block">
-                  03 // Technical Verification
-                </span>
-                <SplitText
-                  text="Flagship Ventures & Systems"
-                  tag="h2"
-                  className="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary"
-                  delay={30}
-                  duration={0.7}
-                  from={{ opacity: 0, y: 15 }}
-                  to={{ opacity: 1, y: 0 }}
-                  textAlign="left"
-                />
-              </div>
+        <section id="proof" className="space-y-10 scroll-mt-24">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-border-color pb-4">
+            <div className="space-y-2">
+              <span className="text-xs font-mono font-bold text-text-secondary tracking-widest uppercase block">
+                03 // Technical Verification
+              </span>
+              <SplitText
+                text="Flagship Ventures & Systems"
+                tag="h2"
+                className="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary"
+                delay={30}
+                duration={0.7}
+                from={{ opacity: 0, y: 15 }}
+                to={{ opacity: 1, y: 0 }}
+                textAlign="left"
+              />
+            </div>
 
             {/* Simulated selector tabs for categorization */}
             <div className="flex items-center space-x-1 p-1 bg-bg-secondary border border-border-color rounded-lg max-w-max">
@@ -817,37 +743,18 @@ export default function App() {
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
-          </div>
         </section>
 
         {/* SECTION 5: ACADEMIC & LEADERSHIP FOUNDATION */}
-        <section id="academic" className="space-y-10 scroll-mt-24 relative overflow-hidden rounded-3xl border border-neutral-200/60 dark:border-neutral-900/80 bg-neutral-50/15 dark:bg-[#07070a]/25 p-6 md:p-10 lg:p-12 shadow-sm transition-all duration-500">
-          
-          {/* Holographic Physics-based Ribbon Trails Backdrop */}
-          <div className="absolute inset-0 z-0 opacity-40 dark:opacity-60 pointer-events-none overflow-hidden rounded-3xl">
-            <Ribbons
-              colors={darkMode ? ['#10b981', '#059669', '#34d399'] : ['#2563eb', '#3b82f6', '#60a5fa']}
-              baseSpring={0.015}
-              baseFriction={0.92}
-              baseThickness={18}
-              offsetFactor={0.03}
-              maxAge={800}
-              pointCount={50}
-              speedMultiplier={0.4}
-              enableFade={true}
-              enableShaderEffect={true}
-            />
+        <section id="academic" className="space-y-10 scroll-mt-24">
+          <div className="space-y-2 border-b border-border-color pb-4">
+            <span className="text-xs font-mono font-bold text-text-secondary tracking-widest uppercase block">
+              04 // Education & Credentials
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary">
+              Academic & Leadership Foundation
+            </h2>
           </div>
-
-          <div className="relative z-10 space-y-10 w-full">
-            <div className="space-y-2 border-b border-border-color pb-4">
-              <span className="text-xs font-mono font-bold text-text-secondary tracking-widest uppercase block">
-                04 // Education & Credentials
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary">
-                Academic & Leadership Foundation
-              </h2>
-            </div>
 
           <div className="grid lg:grid-cols-12 gap-6">
             
@@ -920,44 +827,25 @@ export default function App() {
               </div>
             </div>
           </div>
-          </div>
         </section>
 
         {/* SECTION 6: SYSTEM COMMAND TERMINAL & CONTACT INTERFACE */}
-        <section id="contact" className="space-y-10 scroll-mt-24 relative overflow-hidden rounded-3xl border border-neutral-200/60 dark:border-neutral-900/80 bg-neutral-50/15 dark:bg-[#07070a]/25 p-6 md:p-10 lg:p-12 shadow-sm transition-all duration-500">
-          
-          {/* Holographic Physics-based Ribbon Trails Backdrop */}
-          <div className="absolute inset-0 z-0 opacity-40 dark:opacity-60 pointer-events-none overflow-hidden rounded-3xl">
-            <Ribbons
-              colors={darkMode ? ['#10b981', '#059669', '#34d399'] : ['#2563eb', '#3b82f6', '#60a5fa']}
-              baseSpring={0.015}
-              baseFriction={0.92}
-              baseThickness={18}
-              offsetFactor={0.03}
-              maxAge={800}
-              pointCount={50}
-              speedMultiplier={0.4}
-              enableFade={true}
-              enableShaderEffect={true}
+        <section id="contact" className="space-y-10 scroll-mt-24">
+          <div className="space-y-2 border-b border-border-color pb-4">
+            <span className="text-xs font-mono font-bold text-text-secondary tracking-widest uppercase block">
+              05 // Transmission Node
+            </span>
+            <SplitText
+              text="Controls & Communications"
+              tag="h2"
+              className="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary"
+              delay={35}
+              duration={0.7}
+              from={{ opacity: 0, y: 15 }}
+              to={{ opacity: 1, y: 0 }}
+              textAlign="left"
             />
           </div>
-
-          <div className="relative z-10 space-y-10 w-full">
-            <div className="space-y-2 border-b border-border-color pb-4">
-              <span className="text-xs font-mono font-bold text-text-secondary tracking-widest uppercase block">
-                05 // Transmission Node
-              </span>
-              <SplitText
-                text="Controls & Communications"
-                tag="h2"
-                className="text-2xl sm:text-3xl font-bold tracking-tight text-text-primary"
-                delay={35}
-                duration={0.7}
-                from={{ opacity: 0, y: 15 }}
-                to={{ opacity: 1, y: 0 }}
-                textAlign="left"
-              />
-            </div>
 
           <div className="space-y-8">
             
@@ -978,45 +866,25 @@ export default function App() {
             {/* Full interactive contact form */}
             <ContactForm />
           </div>
-          </div>
         </section>
 
         {/* Dynamic call to action card above footer */}
-        <section className="relative overflow-hidden rounded-3xl border border-neutral-200/60 dark:border-neutral-900/80 bg-neutral-50/15 dark:bg-[#07070a]/25 p-8 text-center space-y-6 shadow-sm transition-all duration-500">
-          
-          {/* Holographic Physics-based Ribbon Trails Backdrop */}
-          <div className="absolute inset-0 z-0 opacity-40 dark:opacity-60 pointer-events-none overflow-hidden rounded-3xl">
-            <Ribbons
-              colors={darkMode ? ['#10b981', '#059669', '#34d399'] : ['#2563eb', '#3b82f6', '#60a5fa']}
-              baseSpring={0.015}
-              baseFriction={0.92}
-              baseThickness={18}
-              offsetFactor={0.03}
-              maxAge={800}
-              pointCount={50}
-              speedMultiplier={0.4}
-              enableFade={true}
-              enableShaderEffect={true}
-            />
+        <section className="bg-bg-primary border border-border-color p-8 rounded-lg text-center space-y-6 shadow-sm">
+          <div className="max-w-xl mx-auto space-y-3">
+            <h3 className="text-2xl font-bold tracking-tight text-text-primary leading-tight">
+              Ready to Accelerate Recruitment Handshakes?
+            </h3>
+            <p className="text-xs sm:text-sm text-text-secondary leading-relaxed font-light font-sans">
+              Get direct proof of candidate operational precision. Click button to initiate the Cryptographic Records verification modal or request references immediately.
+            </p>
           </div>
-
-          <div className="relative z-10 w-full space-y-6">
-            <div className="max-w-xl mx-auto space-y-3">
-              <h3 className="text-2xl font-bold tracking-tight text-text-primary leading-tight">
-                Ready to Accelerate Recruitment Handshakes?
-              </h3>
-              <p className="text-xs sm:text-sm text-text-secondary leading-relaxed font-light font-sans">
-                Get direct proof of candidate operational precision. Click button to initiate the Cryptographic Records verification modal or request references immediately.
-              </p>
-            </div>
-            <button 
-              onClick={() => setIsModalOpen(true)}
-              className="px-6 py-3 bg-text-primary text-bg-primary hover:bg-transparent hover:text-text-primary hover:border-text-primary font-mono text-xs font-bold tracking-widest rounded uppercase flex items-center space-x-2 mx-auto active:scale-98 transition-all border border-transparent cursor-pointer"
-            >
-              <ShieldCheck className="w-4 h-4 text-emerald-500" />
-              <span>Verify Official Credentials (CV)</span>
-            </button>
-          </div>
+          <button 
+            onClick={() => setIsModalOpen(true)}
+            className="px-6 py-3 bg-text-primary text-bg-primary hover:bg-transparent hover:text-text-primary hover:border-text-primary font-mono text-xs font-bold tracking-widest rounded uppercase flex items-center space-x-2 mx-auto active:scale-98 transition-all border border-transparent cursor-pointer"
+          >
+            <ShieldCheck className="w-4 h-4 text-emerald-500" />
+            <span>Verify Official Credentials (CV)</span>
+          </button>
         </section>
 
       </main>
