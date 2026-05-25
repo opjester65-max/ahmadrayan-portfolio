@@ -1,0 +1,6 @@
+.ribbons-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  pointer-events: none; /* Let clicks pass through to standard elements, but we will bind listeners on the parent container */
+}

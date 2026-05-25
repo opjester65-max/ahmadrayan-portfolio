@@ -1,0 +1,6 @@
+{
+  "name": "Ahmad Rayan Qasim Portfolio",
+  "description": "A hyper-minimalist, typography-driven personal portfolio website for Ahmad Rayan Qasim highlighting applied LLM orchestration, scalable backend automation, and high-performance database architectures.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

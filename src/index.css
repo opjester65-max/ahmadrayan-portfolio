@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9f9fb;
+  --text-primary: #0a0a0a;
+  --text-secondary: #525252;
+  --border-color: #e5e5e5;
+}
+
+:root.dark {
+  --bg-primary: #050505;
+  --bg-secondary: #0c0c0c;
+  --text-primary: #f5f5f5;
+  --text-secondary: #a3a3a3;
+  --border-color: #1f1f23;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border-color: var(--border-color);
+  
+  /* Custom anim rules if needed */
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom styles for high-end scrollbars and general layout transitions */
+@layer base {
+  body {
+    transition: background-color 0.3s ease, border-color 0.3s ease, text-color 0.3s ease;
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+  }
+}
