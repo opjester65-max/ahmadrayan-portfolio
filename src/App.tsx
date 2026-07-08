@@ -55,6 +55,83 @@ export default function App() {
     }
   }, [darkMode]);
 
+  // Dynamic Animated Favicon System - Circular Avatar with Orbiting System Indicator
+  useEffect(() => {
+    let favicon = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
+    if (!favicon) {
+      favicon = document.createElement('link');
+      favicon.rel = 'icon';
+      document.head.appendChild(favicon);
+    }
+
+    const canvas = document.createElement('canvas');
+    canvas.width = 32;
+    canvas.height = 32;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.src = 'https://i.ibb.co/cH6KCRb/Avatra-bg-remove.png';
+
+    let angle = 0;
+    let timerId: any;
+    let imgLoaded = false;
+
+    img.onload = () => {
+      imgLoaded = true;
+    };
+
+    const updateFavicon = () => {
+      ctx.clearRect(0, 0, 32, 32);
+
+      // Clip central circular avatar
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(16, 16, 11, 0, Math.PI * 2);
+      ctx.clip();
+
+      if (imgLoaded) {
+        ctx.drawImage(img, 4, 4, 24, 24);
+      } else {
+        // Fallback indicator if image loading or CORS fails
+        ctx.fillStyle = '#0f172a';
+        ctx.fill();
+        ctx.fillStyle = '#3b82f6';
+        ctx.font = 'bold 12px monospace';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('A', 16, 16);
+      }
+      ctx.restore();
+
+      // Outer track ring
+      ctx.beginPath();
+      ctx.arc(16, 16, 13.5, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(37, 99, 235, 0.4)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+
+      // Orbiting emerald dot indicating system operation status
+      const dotX = 16 + 13.5 * Math.cos(angle);
+      const dotY = 16 + 13.5 * Math.sin(angle);
+      ctx.beginPath();
+      ctx.arc(dotX, dotY, 2.5, 0, Math.PI * 2);
+      ctx.fillStyle = '#10b981';
+      ctx.fill();
+
+      favicon.href = canvas.toDataURL('image/png');
+      angle += 0.12;
+      timerId = setTimeout(updateFavicon, 100);
+    };
+
+    updateFavicon();
+
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, []);
+
   const handleScrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -113,178 +190,253 @@ export default function App() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24 scroll-mt-24" id="hero-top">
         
         {/* SECTION 1: HERO & EXECUTIVE SUMMARY */}
-        <section className="space-y-12 relative overflow-hidden rounded-3xl border border-neutral-200/60 dark:border-neutral-900/80 bg-neutral-50/15 dark:bg-[#07070a]/25 p-6 md:p-10 lg:p-12 shadow-sm transition-all duration-500">
+        <section className="relative overflow-hidden rounded-3xl border border-neutral-200/60 dark:border-neutral-900/80 bg-neutral-50/5 dark:bg-[#06070a]/40 p-6 sm:p-8 md:p-12 lg:p-16 shadow-xl transition-all duration-500">
           
           {/* Holographic Physics-based Ribbon Trails Backdrop */}
-          <div className="absolute inset-0 z-0 opacity-40 dark:opacity-60 pointer-events-none overflow-hidden rounded-3xl">
+          <div className="absolute inset-0 z-0 opacity-30 dark:opacity-50 pointer-events-none overflow-hidden rounded-3xl">
             <Ribbons
-              colors={darkMode ? ['#10b981', '#059669', '#34d399'] : ['#2563eb', '#3b82f6', '#60a5fa']}
-              baseSpring={0.015}
-              baseFriction={0.92}
-              baseThickness={18}
-              offsetFactor={0.03}
-              maxAge={800}
-              pointCount={50}
-              speedMultiplier={0.4}
+              colors={darkMode ? ['#3b82f6', '#1d4ed8', '#60a5fa'] : ['#2563eb', '#3b82f6', '#60a5fa']}
+              baseSpring={0.012}
+              baseFriction={0.93}
+              baseThickness={14}
+              offsetFactor={0.02}
+              maxAge={900}
+              pointCount={55}
+              speedMultiplier={0.35}
               enableFade={true}
               enableShaderEffect={true}
             />
           </div>
 
-          <div className="relative z-10 space-y-12">
-          
-          {/* Pulsing Terminal State Indicator */}
-          <div className="inline-flex items-center space-x-2 bg-neutral-200/50 dark:bg-[#121212] border border-neutral-300 dark:border-neutral-800 rounded-full px-3 py-1.5 transition-colors">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span className="text-[10px] sm:text-xs font-mono font-medium tracking-wide text-neutral-500 dark:text-neutral-400">
-              Open to Global Technical Opportunities & Applied AI Engineering
-            </span>
-          </div>
-
-          <div className="grid lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-7 space-y-6">
-              
-              {/* Core Identity Greeting */}
-              <div className="space-y-3">
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-emerald-500"></span>
-                  <span className="text-[10px] font-mono font-extrabold tracking-widest text-blue-600 dark:text-emerald-400 uppercase">
-                    AI Systems Architect &bull; PortFOLIO v2.5
-                  </span>
-                </div>
-                <SplitText
-                  text="Ahmad Rayan Qasim"
-                  tag="h1"
-                  className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-neutral-950 dark:text-white font-sans leading-none block"
-                  delay={35}
-                  duration={0.9}
-                  from={{ opacity: 0, y: 30 }}
-                  to={{ opacity: 1, y: 0 }}
-                  textAlign="left"
-                />
-                <SplitText
-                  text="Bridging Core Computing Foundations with Next-Gen Agentic Intelligence."
-                  tag="p"
-                  className="text-xl sm:text-2xl font-semibold tracking-tight text-neutral-700 dark:text-neutral-300 font-sans leading-normal max-w-3xl pt-1 block"
-                  delay={12}
-                  duration={0.7}
-                  from={{ opacity: 0, y: 15 }}
-                  to={{ opacity: 1, y: 0 }}
-                  textAlign="left"
-                />
-              </div>
-              
-              {/* Core Subheadline */}
-              <p className="text-base sm:text-lg text-neutral-500 dark:text-neutral-400 font-light leading-relaxed max-w-2xl font-sans">
-                Computer Science undergraduate specializing in applied LLM orchestration, scalable backend automation, and high-performance database architectures. Built to scale, engineered for business value.
-              </p>
-
-              {/* Action Buttons Hub */}
-              <div className="pt-2 flex flex-wrap items-center gap-3">
-                <button
-                  onClick={() => handleScrollToSection("proof")}
-                  className="px-5 py-3 bg-text-primary text-bg-primary font-mono text-xs font-semibold rounded-lg hover:opacity-90 flex items-center space-x-1.5 transition-all shadow-md active:scale-98 cursor-pointer"
-                >
-                  <span>Explore Systems</span>
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="px-5 py-3 bg-bg-secondary border border-border-color text-text-primary font-mono text-xs font-semibold rounded-lg hover:bg-text-primary hover:text-bg-primary flex items-center space-x-1.5 transition-all active:scale-98 cursor-pointer"
-                >
-                  <ShieldCheck className="w-4 h-4 text-emerald-500" />
-                  <span>Verify Record (CV)</span>
-                </button>
-                <a
-                  href="https://github.com/ahmadrayan-create"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="px-5 py-3 bg-transparent border border-border-color text-text-primary hover:bg-text-primary hover:text-bg-primary font-mono text-xs font-semibold rounded-lg flex items-center gap-1.5 transition-all active:scale-98 cursor-pointer"
-                >
-                  <Github className="w-4 h-4" />
-                  <span>View GitHub</span>
-                </a>
-              </div>
-
-              {/* Integration & Deployment Gateway Card */}
-              <div className="bg-bg-primary border border-border-color rounded-lg p-5 space-y-4 shadow-sm mt-4">
-                <span className="text-[10px] font-mono text-text-secondary uppercase tracking-widest block font-bold">
-                  // Integration & Deployment Gateway
+          <div className="relative z-10 space-y-16">
+            {/* Top Row: Brand & Pulsing Terminal State */}
+            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-neutral-200/40 dark:border-neutral-800/60 pb-6">
+              <div className="inline-flex items-center space-x-2 bg-neutral-200/40 dark:bg-[#111] border border-neutral-300 dark:border-neutral-800 rounded-full px-3 py-1">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
                 </span>
-                <p className="text-xs text-text-secondary leading-relaxed font-sans">
-                  Systems built with robust API routing and orchestrations across leading language models, engineered for continuous edge delivery.
+                <span className="text-[10px] font-mono font-medium tracking-wide text-neutral-500 dark:text-neutral-400">
+                  SYSTEM CORE: ONLINE &bull; OPEN TO GLOBAL SPRINTS
+                </span>
+              </div>
+              <div className="text-[10px] font-mono text-neutral-400 dark:text-neutral-500 uppercase tracking-widest">
+                00 // EXECUTIVE INGRESS
+              </div>
+            </div>
+
+            {/* Main 3-Column Hero Grid matching image_0.png */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              
+              {/* Left Column: Core Identity Heading (lg:col-span-4) */}
+              <div className="lg:col-span-4 space-y-6 text-left">
+                {/* Thin white horizontal accent line */}
+                <div className="w-16 h-[2px] bg-neutral-950 dark:bg-white" />
+                
+                <div className="space-y-3">
+                  <span className="text-xs font-mono font-extrabold tracking-widest text-blue-600 dark:text-blue-400 uppercase block">
+                    AI Systems Engineer
+                  </span>
+                  <div className="block">
+                    <SplitText
+                      text="I'm Ahmad, an"
+                      tag="h1"
+                      className="text-4xl sm:text-5xl lg:text-[40px] xl:text-5xl font-black tracking-tight text-neutral-950 dark:text-white font-sans leading-none block"
+                      delay={35}
+                      duration={0.9}
+                      from={{ opacity: 0, y: 30 }}
+                      to={{ opacity: 1, y: 0 }}
+                      textAlign="left"
+                    />
+                    <SplitText
+                      text="AI Systems Architect."
+                      tag="h1"
+                      className="text-4xl sm:text-5xl lg:text-[40px] xl:text-5xl font-black tracking-tight text-blue-600 dark:text-blue-400 font-sans leading-none block pt-2"
+                      delay={40}
+                      duration={0.9}
+                      from={{ opacity: 0, y: 30 }}
+                      to={{ opacity: 1, y: 0 }}
+                      textAlign="left"
+                    />
+                  </div>
+                </div>
+                
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 font-light leading-relaxed max-w-sm font-sans">
+                  Bridging Core Computing Foundations with Next-Gen Agentic Intelligence. Computer Science undergraduate building reliable, scalable systems.
                 </p>
-                <div className="space-y-3 font-mono text-xs text-text-secondary">
-                  <div className="flex justify-between items-center py-1.5 border-b border-border-color">
-                    <span>Model APIs:</span>
-                    <span className="font-semibold text-text-primary">OpenAI, Anthropic, Gemini</span>
+
+                {/* Down Arrow Button styled exactly like image_0.png */}
+                <button
+                  onClick={() => handleScrollToSection("trajectory")}
+                  className="w-12 h-12 rounded-full bg-blue-600 dark:bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center transition-all shadow-lg hover:shadow-blue-500/20 active:scale-95 cursor-pointer"
+                  title="Scroll Down"
+                >
+                  <ArrowRight className="w-5 h-5 rotate-90" />
+                </button>
+              </div>
+
+              {/* Middle Column: Circular Avatar Frame with Glow (lg:col-span-4) */}
+              <div className="lg:col-span-4 w-full flex flex-col justify-center items-center py-4 relative z-20">
+                <div className="relative flex items-center justify-center w-full max-w-sm mx-auto">
+                  {/* Prominent, soft, circular blue glow surrounding avatar */}
+                  <div className="absolute w-72 h-72 sm:w-80 sm:h-80 rounded-full bg-blue-600/30 blur-[64px] pointer-events-none animate-pulse" />
+                  
+                  {/* Rotating orbital rings */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="absolute w-[290px] h-[290px] rounded-full border border-blue-500/10 animate-[spin_30s_linear_infinite]" />
+                    <div className="absolute w-[270px] h-[270px] rounded-full border border-dashed border-blue-400/15 animate-[spin_20s_linear_infinite_reverse]" />
                   </div>
-                  <div className="flex justify-between items-center py-1.5 border-b border-border-color">
-                    <span>Deployment Host:</span>
-                    <span className="text-blue-500 dark:text-emerald-400 font-bold">Vercel Edge Network</span>
+
+                  {/* Perfect Circular boundary framing the avatar */}
+                  <div className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full border border-neutral-200 dark:border-neutral-800/80 bg-neutral-100 dark:bg-neutral-950/90 shadow-[0_0_40px_rgba(37,99,235,0.15)] flex items-center justify-center overflow-hidden group">
+                    {/* Subtle glare sweep */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none" />
+                    
+                    <img
+                      src="https://i.ibb.co/cH6KCRb/Avatra-bg-remove.png"
+                      alt="Ahmad Rayan Qasim Avatar"
+                      referrerPolicy="no-referrer"
+                      className="w-[90%] h-[90%] object-contain mt-auto transform group-hover:scale-103 transition-transform duration-700 select-none pointer-events-none"
+                    />
                   </div>
-                  <div className="flex justify-between items-center py-1.5 border-b border-border-color">
-                    <span>Environment:</span>
-                    <span className="text-text-primary font-semibold">Standard Container Engine</span>
-                  </div>
-                  <div className="flex justify-between items-center py-1.55">
-                    <span>SSL Status:</span>
-                    <span className="text-emerald-500 font-bold flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span> Active Security
-                    </span>
+                </div>
+              </div>
+
+              {/* Right Column: About, Work, and Follow Me (lg:col-span-4) */}
+              <div className="lg:col-span-4 space-y-8 text-left">
+                
+                {/* ABOUT ME SECTION */}
+                <div className="space-y-2">
+                  <span className="text-[10px] font-mono font-bold text-neutral-400 dark:text-neutral-500 tracking-widest uppercase block">
+                    ABOUT ME
+                  </span>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 font-sans leading-relaxed">
+                    Computer Science undergraduate specializing in applied LLM orchestration, scalable backend automation, and high-performance database architectures.
+                  </p>
+                  <button
+                    onClick={() => handleScrollToSection("trajectory")}
+                    className="text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-800 dark:text-neutral-300 hover:text-blue-500 dark:hover:text-blue-400 flex items-center gap-1 transition-colors group cursor-pointer"
+                  >
+                    <span>LEARN MORE</span>
+                    <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                  </button>
+                </div>
+
+                {/* MY WORK SECTION */}
+                <div className="space-y-2">
+                  <span className="text-[10px] font-mono font-bold text-neutral-400 dark:text-neutral-500 tracking-widest uppercase block">
+                    MY WORK
+                  </span>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 font-sans leading-relaxed">
+                    High-impact AI deployments and optimized software. Designed to combine advanced model architectures with clean relational schemas.
+                  </p>
+                  <button
+                    onClick={() => handleScrollToSection("proof")}
+                    className="text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-800 dark:text-neutral-300 hover:text-blue-500 dark:hover:text-blue-400 flex items-center gap-1 transition-colors group cursor-pointer"
+                  >
+                    <span>BROWSE PORTFOLIO</span>
+                    <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                  </button>
+                </div>
+
+                {/* FOLLOW ME SECTION */}
+                <div className="space-y-2">
+                  <span className="text-[10px] font-mono font-bold text-neutral-400 dark:text-neutral-500 tracking-widest uppercase block">
+                    FOLLOW ME
+                  </span>
+                  <div className="flex items-center gap-4 pt-1">
+                    <a
+                      href="https://github.com/ahmadrayan-create"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-neutral-400 dark:text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors"
+                      title="GitHub"
+                    >
+                      <Github className="w-4.5 h-4.5" />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/ahmad-rayan-2a1785261/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-neutral-400 dark:text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors"
+                      title="LinkedIn"
+                    >
+                      <Linkedin className="w-4.5 h-4.5" />
+                    </a>
+                    <button
+                      onClick={() => handleScrollToSection("contact")}
+                      className="text-neutral-400 dark:text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors cursor-pointer"
+                      title="Email Direct Signal"
+                    >
+                      <Mail className="w-4.5 h-4.5" />
+                    </button>
                   </div>
                 </div>
 
-                {/* Verified Integration Notice */}
-                <div className="pt-2 text-[10px] text-text-secondary font-mono bg-bg-secondary p-3 border border-border-color rounded">
-                  <span className="font-extrabold text-text-primary block mb-1">AUTOMATED TESTING STABLE</span>
-                  <span className="font-sans font-light text-[10px] text-text-secondary block">Operations are verified across sandboxed execution tests to guarantee runtime reliability.</span>
+              </div>
+
+            </div>
+
+            {/* Bottom Row Section: Layout styled from image_0.png bottom part of hero */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-8 border-t border-neutral-200/40 dark:border-neutral-800/60 items-start">
+              
+              {/* Left text: I've been developing websites / engineering solutions */}
+              <div className="lg:col-span-6 space-y-3 text-left">
+                <span className="text-[10px] font-mono font-bold text-neutral-400 dark:text-neutral-500 tracking-widest uppercase block">
+                  / PERSISTENT FOUNDATION
+                </span>
+                <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-950 dark:text-white font-sans">
+                  Developing Intelligent Solutions Since 2020
+                </h3>
+                <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed font-sans max-w-md">
+                  Operations are verified across sandboxed execution tests to guarantee absolute runtime reliability and memory-efficient data optimization.
+                </p>
+              </div>
+
+              {/* Right stats: 12 Years, 150+ Successful Projects etc. mapped to Ahmad's real stats */}
+              <div className="lg:col-span-6 grid grid-cols-3 gap-4">
+                {PORTFOLIO_METRIC_CARDS.map((metric, idx) => (
+                  <div key={idx} className="space-y-1 text-left">
+                    <div className="text-2xl sm:text-3xl font-extrabold text-neutral-950 dark:text-white tracking-tight">
+                      {metric.value.split(" ")[0]}
+                    </div>
+                    <div className="text-[10px] font-mono text-neutral-400 dark:text-neutral-500 font-bold uppercase tracking-wider leading-tight">
+                      {metric.label}
+                    </div>
+                    <div className="text-[9px] text-neutral-400 dark:text-neutral-500 font-light font-sans truncate">
+                      {metric.institution}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+            </div>
+
+            {/* Bottom row of client logos: PREVIOUSLY WORKED ON */}
+            <div className="pt-8 border-t border-neutral-200/30 dark:border-neutral-800/40 flex flex-wrap items-center justify-between gap-6">
+              <span className="text-[10px] font-mono font-bold text-neutral-400 dark:text-neutral-500 tracking-widest uppercase">
+                PREVIOUSLY WORKED ON
+              </span>
+              <div className="flex flex-wrap items-center gap-6 sm:gap-10 text-neutral-400 dark:text-neutral-500 font-mono text-xs font-bold">
+                <div className="flex items-center gap-1.5 grayscale opacity-70 hover:opacity-100 transition-opacity">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                  <span>deepbuild</span>
+                </div>
+                <div className="flex items-center gap-1.5 grayscale opacity-70 hover:opacity-100 transition-opacity">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                  <span>codealpha</span>
+                </div>
+                <div className="flex items-center gap-1.5 grayscale opacity-70 hover:opacity-100 transition-opacity">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+                  <span>techbist</span>
+                </div>
+                <div className="flex items-center gap-1.5 grayscale opacity-70 hover:opacity-100 transition-opacity">
+                  <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
+                  <span>air university</span>
                 </div>
               </div>
             </div>
 
-            {/* Right stack: Holographic Profile ID Card - Prominent and Majestic Full Height Block */}
-            <div className="lg:col-span-5 w-full flex flex-col justify-center items-center py-4 relative z-20">
-              <ProfileCard 
-                name="Ahmad Rayan Qasim"
-                title="AI Systems Engineer"
-                handle="rayanqasim"
-                status="Active Ingress"
-                contactText="Direct Signal"
-                onContactClick={() => handleScrollToSection("contact")}
-                avatarUrl="https://i.ibb.co/VYhK10hL/Pfp-Cropped-Fence-Bg-removed-500kb.png"
-              />
-            </div>
-          </div>
-
-          {/* Minimal Metric Strip (3 Columns) */}
-          <div className="grid md:grid-cols-3 gap-6 pt-6 border-t border-border-color">
-            {PORTFOLIO_METRIC_CARDS.map((metric, idx) => (
-              <div 
-                key={idx} 
-                className="bg-bg-primary border border-border-color rounded-lg p-5 hover:border-blue-500 dark:hover:border-emerald-500 transition-all duration-300 hover:translate-y-[-1px] group"
-              >
-                <div className="space-y-1">
-                  <div className="font-mono text-[10px] text-text-secondary font-bold tracking-wider">
-                    {metric.label}
-                  </div>
-                  <div className="text-2xl sm:text-3xl font-extrabold text-text-primary tracking-tight group-hover:text-amber-500 dark:group-hover:text-emerald-400 transition-colors">
-                    {metric.value}
-                  </div>
-                  <div className="text-xs text-text-secondary font-light font-sans">
-                    {metric.institution}
-                  </div>
-                </div>
-                {/* Embedded computer science mono statement inside each card */}
-                <div className="mt-4 bg-bg-secondary p-2 px-3 border border-border-color rounded font-mono text-[10px] text-text-secondary overflow-x-auto select-none">
-                  {metric.monoCode}
-                </div>
-              </div>
-            ))}
-          </div>
           </div>
         </section>
 
@@ -918,7 +1070,7 @@ export default function App() {
               <span>GitHub</span>
             </a>
             <a 
-              href="https://linkedin.com/in/ahmad-rayan-qasim/" 
+              href="https://www.linkedin.com/in/ahmad-rayan-2a1785261/" 
               target="_blank" 
               rel="noreferrer" 
               className="text-text-secondary hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-1.5 font-bold uppercase tracking-wide cursor-pointer"
