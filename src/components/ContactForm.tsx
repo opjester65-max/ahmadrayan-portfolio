@@ -73,7 +73,7 @@ export default function ContactForm() {
 
     try {
       logEvent("Validating form fields... OK");
-      logEvent(`Addressing recipient: [Ahmad Rayan Qasim <opjester65@gmail.com>]`);
+      logEvent(`Addressing recipient: [Ahmad Rayan Qasim <iamahmadrayan@gmail.com>]`);
       logEvent(`Verifying sender identity: ${formData.email}`);
       setStatus("sending");
 
@@ -167,7 +167,7 @@ export default function ContactForm() {
             </div>
             <div className="flex justify-between items-center py-1.5 border-b border-border-color">
               <span>Email Relay:</span>
-              <span className="text-emerald-500 font-bold">opjester65@gmail.com</span>
+              <span className="text-emerald-500 font-bold">iamahmadrayan@gmail.com</span>
             </div>
           </div>
         </div>
@@ -186,7 +186,7 @@ export default function ContactForm() {
               <span>GitHub</span>
             </a>
             <a 
-              href="https://linkedin.com/in/ahmad-rayan-qasim/" 
+              href="https://www.linkedin.com/in/ahmad-rayan-2a1785261/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-1.5 px-3 py-2 bg-bg-secondary hover:bg-bg-primary border border-border-color text-xs text-text-primary rounded transition-all cursor-pointer"
@@ -195,7 +195,7 @@ export default function ContactForm() {
               <span>LinkedIn</span>
             </a>
             <a 
-              href="mailto:opjester65@gmail.com" 
+              href="mailto:iamahmadrayan@gmail.com" 
               className="flex items-center justify-center gap-1.5 px-3 py-2 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 border border-emerald-250 dark:border-emerald-900/50 text-xs text-emerald-600 dark:text-emerald-400 rounded transition-all cursor-pointer"
             >
               <Mail className="w-3.5 h-3.5" />

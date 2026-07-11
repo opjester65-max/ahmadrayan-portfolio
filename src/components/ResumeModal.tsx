@@ -21,7 +21,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
       exp => `### ${exp.role} | ${exp.company} (${exp.period})\n${exp.bullets.map(b => `- ${b}`).join("\n")}`
     ).join("\n\n");
 
-    const markdownCV = `# AHMAD RAYAN QASIM\nMultan, Pakistan | opjester65@gmail.com\n\n## CGPA: 3.56 | Air University\n\n## TECHNICAL SKILLS\n${skillsText}\n\n## PROFESSIONAL EXPERIENCE\n${expText}\n\n## EXTRA-CURRICULAR & LEADERSHIP\n- TechBist Society Core Member\n- University Debating Society Coordinator\n- MUN Head représenter for Germany`;
+    const markdownCV = `# AHMAD RAYAN QASIM\nMultan, Pakistan | iamahmadrayan@gmail.com\n\n## CGPA: 3.56 | Air University\n\n## TECHNICAL SKILLS\n${skillsText}\n\n## PROFESSIONAL EXPERIENCE\n${expText}\n\n## EXTRA-CURRICULAR & LEADERSHIP\n- TechBist Society Core Member\n- University Debating Society Coordinator\n- MUN Head représenter for Germany`;
 
     navigator.clipboard.writeText(markdownCV);
     setCopied(true);
@@ -76,7 +76,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               <span>Print System Copy</span>
             </button>
             <a
-              href="mailto:opjester65@gmail.com?subject=Ahmad%20Rayan%20Qasim%20-%20Interview%20/%20CV%20Inquiry"
+              href="mailto:iamahmadrayan@gmail.com?subject=Ahmad%20Rayan%20Qasim%20-%20Interview%20/%20CV%20Inquiry"
               className="px-3.5 py-1.5 bg-text-primary hover:opacity-90 text-bg-primary rounded text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm"
             >
               <Mail className="w-3.5 h-3.5 text-emerald-450 dark:text-emerald-350" />
@@ -96,7 +96,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   Systems Architect & Applied LLM Automations Expert
                 </p>
                 <p className="text-sm text-text-secondary mt-1 font-light">
-                  Multan, Pakistan &bull; opjester65@gmail.com
+                  Multan, Pakistan &bull; iamahmadrayan@gmail.com
                 </p>
               </div>
               <div className="text-right font-mono text-xs text-text-secondary border border-border-color bg-bg-secondary p-3 rounded-lg">

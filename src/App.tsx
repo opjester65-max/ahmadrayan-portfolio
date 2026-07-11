@@ -135,7 +135,14 @@ export default function App() {
   const handleScrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      const headerOffset = 90; // Height of sticky header with comfortable spacing
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     }
   };
 
@@ -190,7 +197,7 @@ export default function App() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24 scroll-mt-24" id="hero-top">
         
         {/* SECTION 1: HERO & EXECUTIVE SUMMARY */}
-        <section className="relative overflow-hidden rounded-3xl border border-neutral-200/60 dark:border-neutral-900/80 bg-neutral-50/5 dark:bg-[#06070a]/40 p-6 sm:p-8 md:p-12 lg:p-16 shadow-xl transition-all duration-500">
+        <section className="relative overflow-hidden rounded-3xl border border-neutral-200/60 dark:border-neutral-900/80 bg-neutral-50/5 dark:bg-[#06070a]/40 p-6 sm:p-8 md:p-12 lg:p-16 shadow-xl transition-all duration-500 min-h-[calc(100vh-140px)] lg:min-h-[760px] flex flex-col justify-center">
           
           {/* Holographic Physics-based Ribbon Trails Backdrop */}
           <div className="absolute inset-0 z-0 opacity-30 dark:opacity-50 pointer-events-none overflow-hidden rounded-3xl">
@@ -1079,7 +1086,7 @@ export default function App() {
               <span>LinkedIn</span>
             </a>
             <a 
-              href="mailto:opjester65@gmail.com" 
+              href="mailto:iamahmadrayan@gmail.com" 
               className="text-text-secondary hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-1.5 font-bold uppercase tracking-wide cursor-pointer md:mr-4"
             >
               <Mail className="w-3.5 h-3.5" />

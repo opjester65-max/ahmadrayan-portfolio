@@ -30,16 +30,20 @@ export default function Header({ darkMode, onToggleTheme, onScrollToSection, onV
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         
         {/* Core identifier */}
-        <div className="flex items-center space-x-3 cursor-pointer" onClick={() => onScrollToSection("hero-top")}>
-          <div className="w-8 h-8 rounded-md bg-text-primary flex items-center justify-center border border-border-color">
-            <Cpu className="w-4 h-4 text-bg-primary" />
+        <div className="flex items-center space-x-3 group cursor-pointer" onClick={() => onScrollToSection("hero-top")}>
+          <div className="relative w-9 h-9 rounded-full bg-gradient-to-tr from-neutral-900 to-neutral-800 dark:from-white dark:to-neutral-100 flex items-center justify-center shadow-lg border border-neutral-800/15 dark:border-white/25 transition-all duration-300 group-hover:scale-105 group-hover:shadow-blue-500/10">
+            <span className="text-[11px] font-mono font-black text-white dark:text-neutral-950 tracking-tighter">
+              AR
+            </span>
+            {/* Exquisite micro border ring */}
+            <div className="absolute inset-[2.5px] rounded-full border border-white/10 dark:border-neutral-950/5 pointer-events-none" />
           </div>
           <div>
-            <h1 className="text-sm font-extrabold text-text-primary tracking-tight leading-none">
+            <h1 className="text-sm font-bold text-text-primary tracking-tight leading-none group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
               Ahmad Rayan Qasim
             </h1>
-            <span className="text-[10px] font-mono text-text-secondary/85 block uppercase pt-0.5 tracking-wider">
-              SYSTEMS ARCHITECT &bull; PORTFOLIO v2.5
+            <span className="text-[9px] font-mono text-text-secondary/80 block uppercase pt-1 tracking-widest font-extrabold">
+              AI Systems & Architectures
             </span>
           </div>
         </div>
