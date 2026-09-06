@@ -290,7 +290,7 @@ export default function App() {
                 </div>
                 
                 <p className="text-sm text-neutral-500 dark:text-neutral-400 font-light leading-relaxed max-w-sm font-sans">
-                  AI Engineer at FlyRank & Founder of DeepBuild AI. Bridging core computing foundations with next-gen agentic intelligence and production-grade RAG pipelines.
+                  AI Engineer & Founder of DeepBuild AI (Ex-FlyRank AI). Bridging core computing foundations with next-gen agentic intelligence and production-grade RAG pipelines.
                 </p>
 
                 {/* Down Arrow Button styled exactly like image_0.png */}

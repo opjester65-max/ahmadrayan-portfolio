@@ -21,7 +21,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
       exp => `### ${exp.role} | ${exp.company} (${exp.period})\n${exp.bullets.map(b => `- ${b}`).join("\n")}`
     ).join("\n\n");
 
-    const markdownCV = `# AHMAD RAYAN QASIM\nMultan, Pakistan | iamahmadrayan@gmail.com | +92 316 6461653\nLinkedIn: https://www.linkedin.com/in/ahmadrayandev | GitHub: https://github.com/ahmadrayan-create\n\n## ACADEMIC STANDING\nBS Computer Science | Air University Multan (CGPA: 3.55, 5th Semester Ongoing)\nMaximum 12/12 Grade Points in Data Structures & Algorithms\n\n## TECHNICAL SKILLS\n${skillsText}\n\n## PROFESSIONAL EXPERIENCE\n${expText}\n\n## LEADERSHIP & KEY HONORS\n- Founder & Lead AI Solutions Architect, DeepBuild AI Services\n- Backend AI Engineering Intern, FlyRank AI\n- Global Nobel Intern, Nobel Navigators\n- Top Build of the Cohort Award, Leverify Quest\n- Chair of UNHRC & Academics Head, Air University MUN\n- Appointed Team Coordinator, University Debating Society\n- Core Member, TechBist Society`;
+    const markdownCV = `# AHMAD RAYAN QASIM\nMultan, Pakistan | iamahmadrayan@gmail.com | +92 316 6461653\nLinkedIn: https://www.linkedin.com/in/ahmadrayandev | GitHub: https://github.com/ahmadrayan-create\n\n## ACADEMIC STANDING\nBS Computer Science | Air University Multan (CGPA: 3.55, 5th Semester Ongoing)\nMaximum 12/12 Grade Points in Data Structures & Algorithms\n\n## TECHNICAL SKILLS\n${skillsText}\n\n## PROFESSIONAL EXPERIENCE\n${expText}\n\n## LEADERSHIP & KEY HONORS\n- Founder & Lead AI Solutions Architect, DeepBuild AI Services\n- AI Engineering Intern, FlyRank AI (July 2026 – September 2026)\n- Global Nobel Intern, Nobel Navigators\n- Top Build of the Cohort Award, Leverify Quest\n- Chair of UNHRC & Academics Head, Air University MUN\n- Appointed Team Coordinator, University Debating Society\n- Core Member, TechBist Society`;
 
     navigator.clipboard.writeText(markdownCV);
     setCopied(true);
@@ -116,7 +116,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   Professional Work Summary
                 </h2>
                 <p className="text-sm text-text-secondary font-light leading-relaxed font-sans">
-                  High-agency AI Systems Architect and Backend AI Engineer with proven execution spanning enterprise RAG pipelines, FastAPI microservices, and autonomous multi-agent orchestration (n8n, Make, Apify). Founder of DeepBuild AI Services and Backend AI Engineering Intern at FlyRank AI, combining rigorous low-level CS foundations (C++, x86 assembly, relational schema normalization) with modern frontier model integration.
+                  High-agency AI Systems Architect and AI Engineer with proven execution spanning enterprise RAG pipelines, FastAPI microservices, and autonomous multi-agent orchestration (n8n, Make, Apify). Founder of DeepBuild AI Services and former AI Engineering Intern at FlyRank AI, combining rigorous low-level CS foundations (C++, x86 assembly, relational schema normalization) with modern frontier model integration.
                 </p>
               </div>
 

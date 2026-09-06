@@ -125,9 +125,9 @@ export const PROJECTS_DATA: Project[] = [
 
 export const EXPERIENCE_DATA: Experience[] = [
   {
-    role: "Backend AI Engineering Intern",
+    role: "AI Engineering Intern",
     company: "FlyRank AI",
-    period: "July 2026 – Present",
+    period: "July 2026 – September 2026",
     isVenture: false,
     badge: "Production AI Systems",
     bullets: [

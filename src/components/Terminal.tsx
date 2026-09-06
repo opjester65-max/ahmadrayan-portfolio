@@ -49,7 +49,7 @@ export default function Terminal({ onVerifyRecord, onScrollToSection }: Terminal
           text: `Ahmad Rayan Qasim — AI Engineer & Startup Founder.
 Undergraduate CS candidate at Air University Multan (CGPA: 3.55, 5th Semester Ongoing).
 Flawless maximum grade points (12/12) in Data Structures & Algorithms.
-Backend AI Engineering Intern at FlyRank AI (RAG & evaluation pipelines).
+Former AI Engineering Intern at FlyRank AI (July 2026 – Sept 2026; RAG & evaluation pipelines).
 Global Nobel Intern at Nobel Navigators.
 Founder & Lead AI Solutions Architect at DeepBuild AI Services (Live: deepbuild-ai-services.vercel.app).`
         });
