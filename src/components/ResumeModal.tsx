@@ -21,7 +21,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
       exp => `### ${exp.role} | ${exp.company} (${exp.period})\n${exp.bullets.map(b => `- ${b}`).join("\n")}`
     ).join("\n\n");
 
-    const markdownCV = `# AHMAD RAYAN QASIM\nMultan, Pakistan | iamahmadrayan@gmail.com\n\n## CGPA: 3.56 | Air University\n\n## TECHNICAL SKILLS\n${skillsText}\n\n## PROFESSIONAL EXPERIENCE\n${expText}\n\n## EXTRA-CURRICULAR & LEADERSHIP\n- TechBist Society Core Member\n- University Debating Society Coordinator\n- MUN Head représenter for Germany`;
+    const markdownCV = `# AHMAD RAYAN QASIM\nMultan, Pakistan | iamahmadrayan@gmail.com | +92 316 6461653\nLinkedIn: https://www.linkedin.com/in/ahmadrayandev | GitHub: https://github.com/ahmadrayan-create\n\n## ACADEMIC STANDING\nBS Computer Science | Air University Multan (CGPA: 3.55, 5th Semester Ongoing)\nMaximum 12/12 Grade Points in Data Structures & Algorithms\n\n## TECHNICAL SKILLS\n${skillsText}\n\n## PROFESSIONAL EXPERIENCE\n${expText}\n\n## LEADERSHIP & KEY HONORS\n- Founder & Lead AI Solutions Architect, DeepBuild AI Services\n- Backend AI Engineering Intern, FlyRank AI\n- Global Nobel Intern, Nobel Navigators\n- Top Build of the Cohort Award, Leverify Quest\n- Chair of UNHRC & Academics Head, Air University MUN\n- Appointed Team Coordinator, University Debating Society\n- Core Member, TechBist Society`;
 
     navigator.clipboard.writeText(markdownCV);
     setCopied(true);
@@ -93,16 +93,16 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               <div>
                 <h1 className="text-3xl font-bold tracking-tight text-text-primary">{`AHMAD RAYAN QASIM`}</h1>
                 <p className="font-mono text-xs text-blue-600 dark:text-emerald-400 mt-1.5 tracking-wider uppercase font-bold">
-                  Systems Architect & Applied LLM Automations Expert
+                  AI Engineer & Startup Founder (DeepBuild AI)
                 </p>
                 <p className="text-sm text-text-secondary mt-1 font-light">
-                  Multan, Pakistan &bull; iamahmadrayan@gmail.com
+                  Multan, Pakistan &bull; iamahmadrayan@gmail.com &bull; +92 316 6461653
                 </p>
               </div>
               <div className="text-right font-mono text-xs text-text-secondary border border-border-color bg-bg-secondary p-3 rounded-lg">
-                <p className="text-text-primary font-bold">AIR UNIVERSITY</p>
-                <p className="mt-0.5">CGPA: <span className="text-blue-600 dark:text-emerald-400 font-bold">3.56</span></p>
-                <p>Status: Undergrad Class of 2028</p>
+                <p className="text-text-primary font-bold">AIR UNIVERSITY MULTAN</p>
+                <p className="mt-0.5">CGPA: <span className="text-blue-600 dark:text-emerald-400 font-bold">3.55</span></p>
+                <p>BS Computer Science (2024–2028)</p>
               </div>
             </div>
           </div>
@@ -116,7 +116,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   Professional Work Summary
                 </h2>
                 <p className="text-sm text-text-secondary font-light leading-relaxed font-sans">
-                  Computer Science undergraduate candidate specializing in high-throughput C++/C# applications, complex relation structures normalization, and advanced automated prompt execution patterns using next-generation AI SDK gateways and low-code servers (n8n, Make). Focuses on driving pure commercial business efficiency.
+                  High-agency AI Systems Architect and Backend AI Engineer with proven execution spanning enterprise RAG pipelines, FastAPI microservices, and autonomous multi-agent orchestration (n8n, Make, Apify). Founder of DeepBuild AI Services and Backend AI Engineering Intern at FlyRank AI, combining rigorous low-level CS foundations (C++, x86 assembly, relational schema normalization) with modern frontier model integration.
                 </p>
               </div>
 
@@ -180,20 +180,20 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               <div>
                 <h2 className="text-sm font-mono font-bold text-text-primary uppercase tracking-wider mb-3 flex items-center gap-2">
                   <span className="w-1.5 h-3 bg-blue-600 dark:bg-emerald-500 rounded-sm"></span>
-                  Foundational Strengths
+                  Foundational Strengths & Honors
                 </h2>
                 <div className="bg-bg-secondary border border-border-color p-3 rounded-lg space-y-2 text-xs">
                   <div className="border-b border-border-color pb-1.5 font-sans">
-                     <span className="font-mono text-blue-600 dark:text-emerald-400 font-bold block">12/12 PERFECT GPA</span>
-                    <span className="text-[10px] text-text-secondary">Data Structures & Algorithms course validation.</span>
+                     <span className="font-mono text-blue-600 dark:text-emerald-400 font-bold block">12/12 PERFECT SCORE</span>
+                    <span className="text-[10px] text-text-secondary">Maximum grade points in Data Structures & Algorithms.</span>
                   </div>
                   <div className="border-b border-border-color pb-1.5 font-sans">
-                    <span className="font-mono text-blue-600 dark:text-emerald-400 font-bold block">450+ APPLIED HOURS</span>
-                    <span className="text-[10px] text-text-secondary">Designing complex custom prompts, token routing architectures & LLM agents.</span>
+                    <span className="font-mono text-blue-600 dark:text-emerald-400 font-bold block">TOP BUILD AWARD</span>
+                    <span className="text-[10px] text-text-secondary">Selected top 40 from 1,000+ applicants in Leverify AI Quest. Founded DeepBuild AI.</span>
                   </div>
                   <div className="font-sans">
-                    <span className="font-mono text-blue-600 dark:text-emerald-400 font-bold block">CADET LEADERSHIP</span>
-                    <span className="text-[10px] text-text-secondary">Represented Germany at MUN. Coordinator for public debate circuits.</span>
+                    <span className="font-mono text-blue-600 dark:text-emerald-400 font-bold block">DIPLOMATIC & TEAM LEADERSHIP</span>
+                    <span className="text-[10px] text-text-secondary">Academics Head & UNHRC Chair at MUN. Debating Society Coordinator.</span>
                   </div>
                 </div>
               </div>

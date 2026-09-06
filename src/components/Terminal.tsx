@@ -46,21 +46,26 @@ export default function Terminal({ onVerifyRecord, onScrollToSection }: Terminal
       case "about":
         newHistory.push({
           type: "output",
-          text: `Ahmad Rayan Qasim is an elite Systems Architect & Applied LLM Engineer.
-Undergraduate CS major at Air University (CGPA: 3.56).
-Exhibits flawless scores (12/12) in Algorithms & Data Structures.
-Specializes in C++/C# backend solutions and multi-agent production orchestration workflows.`
+          text: `Ahmad Rayan Qasim — AI Engineer & Startup Founder.
+Undergraduate CS candidate at Air University Multan (CGPA: 3.55, 5th Semester Ongoing).
+Flawless maximum grade points (12/12) in Data Structures & Algorithms.
+Backend AI Engineering Intern at FlyRank AI (RAG & evaluation pipelines).
+Global Nobel Intern at Nobel Navigators.
+Founder & Lead AI Solutions Architect at DeepBuild AI Services (Live: deepbuild-ai-services.vercel.app).`
         });
         break;
       case "projects":
         newHistory.push({
           type: "output",
           text: `=== FLAGSHIP SYSTEMS REGISTERED ===
-[1] BLUE BARN: Agri-Tech assets engine. 15+ normalized tables, 54 stored procedures. Reporting accuracy +20%.
-[2] VECTORGLIDE 3D: Trajectory simulator, kinematics plotting. Uses Three.js WebGL.
-[3] FINTECH TRACKER: Commodity tracking of spot gold markets (XAUUSD), Looker Studio charts.
-[4] CODETOSURVIVE: C# WPF syntax compiler/parser engine. 80% test coverage.
-[5] SECURESHELL: Low-level C++ shell. Tries, Bloom Filters. False-positive rate < 5%.
+[1] LAWLEDGE: Real-time legal grievance portal (Socket.IO, Supabase, jsPDF).
+[2] USAGE METERING & BILLING: Async micro-cent billing engine (Python, FastAPI, Stripe API, Docker).
+[3] LLM SUPPORT TRIAGE: Microservice intent parsing with self-healing Pydantic loops (FastAPI, OpenRouter).
+[4] BLUE BARN: Enterprise AgriTech DBMS. 15+ normalized tables, 54 stored procedures.
+[5] CODECONNECT: Visual x86 Assembly & C# P/Invoke unmanaged system bridge.
+[6] ENTERPRISE ELD: FMCSA-compliant HOS fleet routing & SVG log sheet generator.
+[7] VECTORGLIDE 3D: Kinematic drone trajectory simulator using Frenet-Serret frames.
+[8] SECURESHELL: C++ POSIX terminal subsystem with Bloom filter malware shield & chroot.
 Type 'contact' or scroll to view details.`
         });
         break;
@@ -68,9 +73,9 @@ Type 'contact' or scroll to view details.`
         newHistory.push({
           type: "output",
           text: `=== TECHNOLOGY CORE STACK ===
-* Languages: C++ (Advanced) | C# (.NET 8.0) | SQL (Advanced) | TS/JS | HTML/CSS | Python
-* Automation & AI: n8n | Make.com | Gemini API | OpenAI API | RAG Architectures | Apify Scraping
-* Infra & DB: SQL Server | Mongo | Firebase | Supabase | EF Core | Git & GitHub`
+* Languages: Python (FastAPI/Pydantic) | C++ (POSIX/Treaps) | C# (.NET/WPF/PInvoke) | TypeScript/React 18 | SQL (T-SQL/Postgres) | 32-bit x86 ASM
+* AI & Agents: n8n | Make.com | Gemini API | OpenAI API | Claude | Cursor | Lovable | Apify | Evaluation Evals
+* Frameworks & Infra: FastAPI | Next.js | Supabase | SQL Server | Socket.IO | Docker | Vercel`
         });
         break;
       case "cv":

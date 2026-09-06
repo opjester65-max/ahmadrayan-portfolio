@@ -36,13 +36,14 @@ import {
   EXPERIENCE_DATA, 
   SKILL_CATEGORIES, 
   EDUCATION_DATA,
-  ACHIEVEMENTS_DATA
+  ACHIEVEMENTS_DATA,
+  CERTIFICATIONS_DATA
 } from "./data";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState<"all" | "enterprise" | "lowlevel" | "fintech">("all");
+  const [activeTab, setActiveTab] = useState<"all" | "ai-backend" | "fullstack" | "lowlevel">("all");
 
   useEffect(() => {
     // Set standard class on root window element for tailwind v4 dark: variants
@@ -148,9 +149,29 @@ export default function App() {
 
   const filteredProjects = PROJECTS_DATA.filter(proj => {
     if (activeTab === "all") return true;
-    if (activeTab === "enterprise") return proj.category.includes("ENTERPRISE") || proj.category.includes("SIMULATOR");
-    if (activeTab === "lowlevel") return proj.category.includes("MATH_SIMULATION") || proj.category.includes("LOW_LEVEL");
-    if (activeTab === "fintech") return proj.category.includes("FINTECH");
+    if (activeTab === "ai-backend") {
+      return proj.category.includes("AI") || 
+             proj.category.includes("BACKEND") || 
+             proj.tags.includes("FastAPI") || 
+             proj.tags.includes("OpenRouter API") || 
+             proj.tags.includes("Gemini API");
+    }
+    if (activeTab === "fullstack") {
+      return proj.category.includes("FULL-STACK") || 
+             proj.category.includes("ENTERPRISE") || 
+             proj.tags.includes("React 18") || 
+             proj.tags.includes("Supabase") ||
+             proj.tags.includes("Socket.IO");
+    }
+    if (activeTab === "lowlevel") {
+      return proj.category.includes("MATH_SIMULATION") || 
+             proj.category.includes("LOW_LEVEL") || 
+             proj.category.includes("DEEP-TECH") || 
+             proj.category.includes("SECURITY") || 
+             proj.tags.includes("C++") || 
+             proj.tags.includes("NASM") || 
+             proj.tags.includes("x86 Assembly");
+    }
     return true;
   });
 
@@ -242,7 +263,7 @@ export default function App() {
                 
                 <div className="space-y-3">
                   <span className="text-xs font-mono font-extrabold tracking-widest text-blue-600 dark:text-blue-400 uppercase block">
-                    AI Systems Engineer
+                    AI Engineer & Startup Founder
                   </span>
                   <div className="block">
                     <SplitText
@@ -269,7 +290,7 @@ export default function App() {
                 </div>
                 
                 <p className="text-sm text-neutral-500 dark:text-neutral-400 font-light leading-relaxed max-w-sm font-sans">
-                  Bridging Core Computing Foundations with Next-Gen Agentic Intelligence. Computer Science undergraduate building reliable, scalable systems.
+                  AI Engineer at FlyRank & Founder of DeepBuild AI. Bridging core computing foundations with next-gen agentic intelligence and production-grade RAG pipelines.
                 </p>
 
                 {/* Down Arrow Button styled exactly like image_0.png */}
@@ -318,7 +339,7 @@ export default function App() {
                     ABOUT ME
                   </span>
                   <p className="text-xs text-neutral-500 dark:text-neutral-400 font-sans leading-relaxed">
-                    Computer Science undergraduate specializing in applied LLM orchestration, scalable backend automation, and high-performance database architectures.
+                    BS Computer Science candidate at Air University (CGPA 3.55, 12/12 in DSA). Specializing in production RAG pipelines, FastAPI microservices, and autonomous multi-agent orchestration.
                   </p>
                   <button
                     onClick={() => handleScrollToSection("trajectory")}
@@ -335,7 +356,7 @@ export default function App() {
                     MY WORK
                   </span>
                   <p className="text-xs text-neutral-500 dark:text-neutral-400 font-sans leading-relaxed">
-                    High-impact AI deployments and optimized software. Designed to combine advanced model architectures with clean relational schemas.
+                    Real-time portals (LawLedge), micro-cent usage metering engines, low-level x86/C++ systems, and commercial AI agency solutions.
                   </p>
                   <button
                     onClick={() => handleScrollToSection("proof")}
@@ -419,25 +440,29 @@ export default function App() {
 
             </div>
 
-            {/* Bottom row of client logos: PREVIOUSLY WORKED ON */}
+            {/* Bottom row of client logos: ENGAGEMENTS & ORGANIZATIONS */}
             <div className="pt-8 border-t border-neutral-200/30 dark:border-neutral-800/40 flex flex-wrap items-center justify-between gap-6">
               <span className="text-[10px] font-mono font-bold text-neutral-400 dark:text-neutral-500 tracking-widest uppercase">
-                PREVIOUSLY WORKED ON
+                ENGAGEMENTS & ORGANIZATIONS
               </span>
-              <div className="flex flex-wrap items-center gap-6 sm:gap-10 text-neutral-400 dark:text-neutral-500 font-mono text-xs font-bold">
-                <div className="flex items-center gap-1.5 grayscale opacity-70 hover:opacity-100 transition-opacity">
+              <div className="flex flex-wrap items-center gap-5 sm:gap-8 text-neutral-400 dark:text-neutral-500 font-mono text-xs font-bold">
+                <div className="flex items-center gap-1.5 grayscale opacity-80 hover:opacity-100 transition-opacity">
                   <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                  <span>deepbuild</span>
+                  <span>flyrank ai</span>
                 </div>
-                <div className="flex items-center gap-1.5 grayscale opacity-70 hover:opacity-100 transition-opacity">
+                <div className="flex items-center gap-1.5 grayscale opacity-80 hover:opacity-100 transition-opacity">
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
+                  <span>nobel navigators</span>
+                </div>
+                <div className="flex items-center gap-1.5 grayscale opacity-80 hover:opacity-100 transition-opacity">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                  <span>deepbuild ai</span>
+                </div>
+                <div className="flex items-center gap-1.5 grayscale opacity-80 hover:opacity-100 transition-opacity">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-500" />
                   <span>codealpha</span>
                 </div>
-                <div className="flex items-center gap-1.5 grayscale opacity-70 hover:opacity-100 transition-opacity">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-                  <span>techbist</span>
-                </div>
-                <div className="flex items-center gap-1.5 grayscale opacity-70 hover:opacity-100 transition-opacity">
+                <div className="flex items-center gap-1.5 grayscale opacity-80 hover:opacity-100 transition-opacity">
                   <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
                   <span>air university</span>
                 </div>
@@ -472,8 +497,8 @@ export default function App() {
                 className="relative grid md:grid-cols-12 gap-6 bg-bg-primary border border-border-color p-6 rounded-lg overflow-hidden hover:border-blue-500 dark:hover:border-emerald-500 transition-all shadow-sm"
               >
                 {/* Background watermarked micro label */}
-                <span className="absolute top-4 right-4 font-mono text-[10px] text-text-secondary pointer-events-none select-none uppercase tracking-wider">
-                  {exp.isVenture ? "Venture Enterprise" : "Corporate Placement"}
+                <span className="absolute top-4 right-4 font-mono text-[10px] text-blue-600 dark:text-emerald-400 bg-blue-500/10 dark:bg-emerald-500/10 px-2.5 py-0.5 rounded border border-blue-500/20 dark:border-emerald-500/20 pointer-events-none select-none uppercase tracking-wider font-bold">
+                  {exp.badge || (exp.isVenture ? "Venture Enterprise" : "Corporate Placement")}
                 </span>
 
                 {/* Left company column */}
@@ -574,9 +599,21 @@ export default function App() {
                   )}
                   {!exp.isVenture && (
                     <div className="mt-5 p-3.5 bg-[#F6F6F9] dark:bg-neutral-950/20 border border-border-color rounded-lg text-xs flex items-start gap-2.5">
-                      <CheckCircle className="w-4 h-4 text-blue-500 dark:text-blue-400 shrink-0 mt-0.5" />
+                      <CheckCircle className="w-4 h-4 text-blue-500 dark:text-emerald-400 shrink-0 mt-0.5" />
                       <p className="text-text-secondary font-light leading-snug font-sans">
-                        <strong>Performance Commendation:</strong> Formally lauded for advanced adaptation to next-generation AI pipelines and exceptional speed of analysis in distributed teams.
+                        {exp.company.includes("FlyRank") ? (
+                          <>
+                            <strong>Production AI Architecture:</strong> Standardizing strict API schemas, retrieval-backed RAG answer flows, and automated test rubrics transitioning experimental AI to predictable production.
+                          </>
+                        ) : exp.company.includes("Nobel") ? (
+                          <>
+                            <strong>Global Leadership Cohort:</strong> Engaging in weekly high-frequency cross-cultural leadership modules, strategic technological transformation, and international execution.
+                          </>
+                        ) : (
+                          <>
+                            <strong>Executive Commendation (Cert CA/SE1/26599):</strong> Formally recommended with Letter of Recommendation from Founder & CEO Sorticri for exceptional analytical prowess, high productivity, and rapid adaptation.
+                          </>
+                        )}
                       </p>
                     </div>
                   )}
@@ -654,6 +691,73 @@ export default function App() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Subsection: Major Certifications & Technical Honors */}
+          <div className="pt-10 border-t border-border-color space-y-6">
+            <div className="space-y-1">
+              <div className="flex items-center gap-2">
+                <Award className="w-4 h-4 text-blue-600 dark:text-emerald-400" />
+                <h3 className="text-base sm:text-lg font-bold text-text-primary tracking-tight">
+                  Major Certifications & Technical Honors
+                </h3>
+              </div>
+              <p className="text-xs text-text-secondary font-sans font-light">
+                Verified industry credentials spanning frontier LLM agent orchestration, AI software engineering, advanced analytics, and executive recommendations.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {CERTIFICATIONS_DATA.map((cert) => (
+                <div 
+                  key={cert.id} 
+                  className="bg-bg-primary border border-border-color rounded-lg p-5 flex flex-col justify-between space-y-4 hover:border-blue-500 dark:hover:border-emerald-500 hover:shadow-sm transition-all group"
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-[10px] font-mono font-bold uppercase text-blue-600 dark:text-emerald-400 bg-blue-500/10 dark:bg-emerald-500/10 px-2 py-0.5 rounded border border-blue-500/20 dark:border-emerald-500/20">
+                        {cert.issuer}
+                      </span>
+                      <span className="text-[10px] font-mono text-text-secondary">
+                        {cert.period}
+                      </span>
+                    </div>
+
+                    <h4 className="text-sm font-bold text-text-primary tracking-tight leading-snug group-hover:text-blue-600 dark:group-hover:text-emerald-400 transition-colors">
+                      {cert.title}
+                    </h4>
+
+                    <p className="text-xs text-text-secondary leading-relaxed font-light font-sans">
+                      {cert.highlight}
+                    </p>
+                  </div>
+
+                  <div className="pt-3 border-t border-border-color space-y-2.5">
+                    <div className="flex flex-wrap gap-1">
+                      {cert.skills.map((skill, sIdx) => (
+                        <span 
+                          key={sIdx} 
+                          className="text-[9px] font-mono bg-bg-secondary px-1.5 py-0.5 rounded text-text-secondary border border-border-color"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex items-center justify-between text-[9px] font-mono pt-1 text-text-secondary">
+                      {cert.credentialId ? (
+                        <span className="text-blue-600 dark:text-emerald-400 font-semibold">
+                          ID: {cert.credentialId}
+                        </span>
+                      ) : (
+                        <span className="uppercase">Formal Accreditation</span>
+                      )}
+                      <span className="uppercase text-text-secondary font-medium">Verified Record</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -760,17 +864,17 @@ export default function App() {
             </div>
 
             {/* Simulated selector tabs for categorization */}
-            <div className="flex items-center space-x-1 p-1 bg-bg-secondary border border-border-color rounded-lg max-w-max">
+            <div className="flex items-center space-x-1 p-1 bg-bg-secondary border border-border-color rounded-lg max-w-max overflow-x-auto">
               {[
-                { label: "All Proofs", id: "all" },
-                { label: "Enterprise & Compilers", id: "enterprise" },
-                { label: "Low-level Math", id: "lowlevel" },
-                { label: "FinTech", id: "fintech" }
+                { label: "All Systems", id: "all" },
+                { label: "AI & Backend APIs", id: "ai-backend" },
+                { label: "Full-Stack & Real-Time", id: "fullstack" },
+                { label: "Low-Level & Systems", id: "lowlevel" }
               ].map((tab, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveTab(tab.id as any)}
-                  className={`px-3 py-1.5 font-mono text-[10px] font-semibold tracking-tight rounded-md transition-all cursor-pointer ${
+                  className={`px-3 py-1.5 font-mono text-[10px] font-semibold tracking-tight rounded-md transition-all cursor-pointer whitespace-nowrap ${
                     activeTab === tab.id
                       ? "bg-text-primary text-bg-primary border border-border-color text-white"
                       : "text-text-secondary hover:text-text-primary"
@@ -782,20 +886,13 @@ export default function App() {
             </div>
           </div>
 
-          {/* Asymmetrical grid layout */}
-          <div className="grid md:grid-cols-6 gap-6">
+          {/* Balanced responsive grid layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((proj, idx) => {
-              // Establish asymmetrical columns based on index
-              // First project (Blue Barn) is flagship, gets 4 columns.
-              // Other projects get 2 columns or 3 columns to build an elegant bento grid structure
-              let colSpan = "md:col-span-3";
-              if (proj.id === "blue-barn") colSpan = "md:col-span-6 lg:col-span-4";
-              if (proj.id === "vectorglide-3d" && activeTab === "all") colSpan = "md:col-span-3 lg:col-span-2";
-
               return (
                 <article 
                   key={proj.id} 
-                  className={`${colSpan} bg-bg-primary border border-border-color hover:border-blue-500 dark:hover:border-emerald-500 rounded-lg p-6 flex flex-col justify-between space-y-6 hover:shadow-md hover:translate-y-[-1px] transition-all duration-300 group`}
+                  className="bg-bg-primary border border-border-color hover:border-blue-500 dark:hover:border-emerald-500 rounded-lg p-6 flex flex-col justify-between space-y-6 hover:shadow-md hover:translate-y-[-1px] transition-all duration-300 group"
                 >
                   <div className="space-y-4">
                     
@@ -804,25 +901,27 @@ export default function App() {
                       <span className="text-text-secondary">
                         PROJECT // 0{idx + 1}
                       </span>
-                      <span className="text-blue-500 dark:text-emerald-400 font-bold uppercase tracking-wider">
+                      <span className="text-blue-500 dark:text-emerald-400 font-bold uppercase tracking-wider text-[10px]">
                         {proj.category}
                       </span>
                     </div>
 
                     <div className="space-y-1">
-                      <div className="flex items-center justify-between">
-                        <h3 className="text-xl font-bold tracking-tight text-text-primary group-hover:text-amber-500 dark:group-hover:text-emerald-400 transition-colors">
+                      <div className="flex items-start justify-between gap-2">
+                        <h3 className="text-lg sm:text-xl font-bold tracking-tight text-text-primary group-hover:text-blue-600 dark:group-hover:text-emerald-400 transition-colors">
                           {proj.title}
                         </h3>
                         {/* Interactive dynamic link */}
                         <a 
-                          href="#contact" 
-                          onClick={(e) => {
+                          href={proj.githubUrl || "#contact"}
+                          target={proj.githubUrl ? "_blank" : undefined}
+                          rel={proj.githubUrl ? "noreferrer" : undefined}
+                          onClick={!proj.githubUrl ? (e) => {
                             e.preventDefault();
                             handleScrollToSection("contact-field");
-                          }}
-                          className="p-1 text-text-secondary hover:text-blue-500 dark:hover:text-emerald-400 transition-colors cursor-pointer"
-                          title="Ask for architecture walk-through"
+                          } : undefined}
+                          className="p-1 text-text-secondary hover:text-blue-500 dark:hover:text-emerald-400 transition-colors cursor-pointer shrink-0 mt-0.5"
+                          title={proj.githubUrl ? "Open GitHub Repository" : "Ask for architecture walk-through"}
                         >
                           <ArrowUpRight className="w-4 h-4" />
                         </a>
@@ -834,7 +933,7 @@ export default function App() {
 
                     {/* Architecture description block */}
                     <div className="space-y-2 bg-bg-secondary p-4 border border-border-color rounded-lg">
-                      <span className="text-[10px] uppercase font-mono tracking-widest text-text-secondary block">
+                      <span className="text-[10px] uppercase font-mono tracking-widest text-text-secondary block font-bold">
                         Core System Architecture
                       </span>
                       <p className="text-xs text-text-secondary leading-relaxed font-light font-sans">
@@ -870,6 +969,39 @@ export default function App() {
                           # {tag}
                         </span>
                       ))}
+                    </div>
+
+                    {/* Action Links */}
+                    <div className="pt-3 border-t border-border-color flex items-center justify-between gap-2">
+                      {proj.githubUrl ? (
+                        <a
+                          href={proj.githubUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="px-3 py-1.5 bg-bg-secondary hover:bg-neutral-200 dark:hover:bg-neutral-800 border border-border-color rounded text-[11px] font-mono font-bold text-text-primary flex items-center gap-1.5 transition-colors"
+                        >
+                          <Github className="w-3.5 h-3.5" />
+                          <span>View Code</span>
+                        </a>
+                      ) : (
+                        <span className="text-[10px] font-mono text-text-secondary uppercase">
+                          Proprietary / In-House
+                        </span>
+                      )}
+
+                      <a
+                        href={proj.githubUrl || "#contact"}
+                        target={proj.githubUrl ? "_blank" : undefined}
+                        rel={proj.githubUrl ? "noreferrer" : undefined}
+                        onClick={!proj.githubUrl ? (e) => {
+                          e.preventDefault();
+                          handleScrollToSection("contact-field");
+                        } : undefined}
+                        className="text-[11px] font-mono font-bold uppercase tracking-wider text-blue-600 dark:text-emerald-400 hover:underline flex items-center gap-1 ml-auto"
+                      >
+                        <span>{proj.githubUrl ? "Live Spec" : "Request Spec"}</span>
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                      </a>
                     </div>
                   </div>
                 </article>

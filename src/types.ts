@@ -6,6 +6,8 @@ export interface Project {
   architecture: string;
   metrics: string[];
   tags: string[];
+  githubUrl?: string;
+  liveUrl?: string;
 }
 
 export interface ServicePillar {
@@ -22,6 +24,7 @@ export interface Experience {
   link?: string;
   tagline?: string;
   pillars?: ServicePillar[];
+  badge?: string;
 }
 
 export interface SkillCategory {
@@ -41,4 +44,16 @@ export interface Achievement {
   impact: string;
   image: string;
   credentialUrl?: string;
+}
+
+export interface Certification {
+  id: string;
+  title: string;
+  issuer: string;
+  period: string;
+  credentialId?: string;
+  highlight: string;
+  skills: string[];
+  badgeColor?: string;
+  link?: string;
 }
