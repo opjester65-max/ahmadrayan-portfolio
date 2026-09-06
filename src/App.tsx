@@ -362,7 +362,7 @@ export default function App() {
                       <Github className="w-4.5 h-4.5" />
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/ahmad-rayan-2a1785261/"
+                      href="https://www.linkedin.com/in/ahmadrayandev"
                       target="_blank"
                       rel="noreferrer"
                       className="text-neutral-400 dark:text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors"
@@ -1022,8 +1022,8 @@ export default function App() {
               </p>
             </div>
 
-            {/* Full interactive contact form */}
-            <ContactForm />
+            {/* Full interactive contact form with LinkedIn Badge */}
+            <ContactForm darkMode={darkMode} />
           </div>
         </section>
 
@@ -1077,7 +1077,7 @@ export default function App() {
               <span>GitHub</span>
             </a>
             <a 
-              href="https://www.linkedin.com/in/ahmad-rayan-2a1785261/" 
+              href="https://www.linkedin.com/in/ahmadrayandev" 
               target="_blank" 
               rel="noreferrer" 
               className="text-text-secondary hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-1.5 font-bold uppercase tracking-wide cursor-pointer"

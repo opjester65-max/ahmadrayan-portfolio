@@ -1,8 +1,13 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import { Mail, Send, Linkedin, Github, CheckCircle, AlertCircle, RefreshCw, Terminal } from "lucide-react";
 import { supabase, isSupabaseConfigured } from "../lib/supabase";
+import { LinkedInBadge } from "./LinkedInBadge";
 
-export default function ContactForm() {
+interface ContactFormProps {
+  darkMode?: boolean;
+}
+
+export default function ContactForm({ darkMode = true }: ContactFormProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -172,35 +177,42 @@ export default function ContactForm() {
           </div>
         </div>
 
-        {/* Redirecting Hooks */}
-        <div className="space-y-3 pt-6 lg:pt-0">
-          <p className="text-[11px] uppercase tracking-wider font-mono text-text-secondary font-bold">Verified Web Presence</p>
-          <div className="grid grid-cols-3 gap-2 font-mono">
-            <a 
-              href="https://github.com/ahmadrayan-create" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1.5 px-3 py-2 bg-bg-secondary hover:bg-bg-primary border border-border-color text-xs text-text-primary rounded transition-all cursor-pointer"
-            >
-              <Github className="w-3.5 h-3.5" />
-              <span>GitHub</span>
-            </a>
-            <a 
-              href="https://www.linkedin.com/in/ahmad-rayan-2a1785261/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1.5 px-3 py-2 bg-bg-secondary hover:bg-bg-primary border border-border-color text-xs text-text-primary rounded transition-all cursor-pointer"
-            >
-              <Linkedin className="w-3.5 h-3.5" />
-              <span>LinkedIn</span>
-            </a>
-            <a 
-              href="mailto:iamahmadrayan@gmail.com" 
-              className="flex items-center justify-center gap-1.5 px-3 py-2 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 border border-emerald-250 dark:border-emerald-900/50 text-xs text-emerald-600 dark:text-emerald-400 rounded transition-all cursor-pointer"
-            >
-              <Mail className="w-3.5 h-3.5" />
-              <span>Email</span>
-            </a>
+        {/* Redirecting Hooks & Official LinkedIn Badge */}
+        <div className="space-y-4 pt-6 lg:pt-0">
+          <div className="space-y-2">
+            <p className="text-[11px] uppercase tracking-wider font-mono text-text-secondary font-bold">Verified Web Presence</p>
+            <div className="grid grid-cols-3 gap-2 font-mono">
+              <a 
+                href="https://github.com/ahmadrayan-create" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-1.5 px-3 py-2 bg-bg-secondary hover:bg-bg-primary border border-border-color text-xs text-text-primary rounded transition-all cursor-pointer"
+              >
+                <Github className="w-3.5 h-3.5" />
+                <span>GitHub</span>
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/ahmadrayandev" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-1.5 px-3 py-2 bg-bg-secondary hover:bg-bg-primary border border-border-color text-xs text-text-primary rounded transition-all cursor-pointer"
+              >
+                <Linkedin className="w-3.5 h-3.5 text-[#0A66C2]" />
+                <span>LinkedIn</span>
+              </a>
+              <a 
+                href="mailto:iamahmadrayan@gmail.com" 
+                className="flex items-center justify-center gap-1.5 px-3 py-2 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 border border-emerald-250 dark:border-emerald-900/50 text-xs text-emerald-600 dark:text-emerald-400 rounded transition-all cursor-pointer"
+              >
+                <Mail className="w-3.5 h-3.5" />
+                <span>Email</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Official LinkedIn Profile Badge */}
+          <div className="pt-2">
+            <LinkedInBadge darkMode={darkMode} />
           </div>
         </div>
       </div>
