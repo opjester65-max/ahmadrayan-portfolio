@@ -271,7 +271,7 @@ export default function ContactForm({ darkMode = true }: ContactFormProps) {
                   onBlur={() => handleBlur("name")}
                   placeholder="Your Name"
                   className={`w-full px-3 py-2 bg-bg-secondary border ${
-                    errors.name ? "border-red-500/60 focus:border-red-500" : "border-border-color focus:border-blue-500 dark:focus:border-emerald-500"
+                    errors.name ? "border-red-500/60 focus:border-red-500" : "border-border-color focus:border-emerald-500"
                   } focus:ring-1 focus:ring-emerald-500/20 text-text-primary rounded text-sm transition-colors focus:outline-none`}
                 />
                 {errors.name && (
@@ -294,7 +294,7 @@ export default function ContactForm({ darkMode = true }: ContactFormProps) {
                   onBlur={() => handleBlur("email")}
                   placeholder="name@organization.com"
                   className={`w-full px-3 py-2 bg-bg-secondary border ${
-                    errors.email ? "border-red-500/60 focus:border-red-500" : "border-border-color focus:border-blue-500 dark:focus:border-emerald-500"
+                    errors.email ? "border-red-500/60 focus:border-red-500" : "border-border-color focus:border-emerald-500"
                   } focus:ring-1 focus:ring-emerald-500/20 text-text-primary rounded text-sm transition-colors focus:outline-none`}
                 />
                 {errors.email && (
@@ -316,7 +316,7 @@ export default function ContactForm({ darkMode = true }: ContactFormProps) {
                 value={formData.subject}
                 onChange={handleChange}
                 placeholder="Collaboration Inquiry"
-                className="w-full px-3 py-2 bg-bg-secondary border border-border-color focus:border-blue-500 dark:focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/20 text-text-primary rounded text-sm transition-colors focus:outline-none"
+                className="w-full px-3 py-2 bg-bg-secondary border border-border-color focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/20 text-text-primary rounded text-sm transition-colors focus:outline-none"
               />
             </div>
 
@@ -333,7 +333,7 @@ export default function ContactForm({ darkMode = true }: ContactFormProps) {
                 rows={4}
                 placeholder="Write your message here..."
                 className={`w-full px-3 py-2 bg-bg-secondary border ${
-                  errors.message ? "border-red-500/60 focus:border-red-500" : "border-border-color focus:border-blue-500 dark:focus:border-emerald-500"
+                  errors.message ? "border-red-500/60 focus:border-red-500" : "border-border-color focus:border-emerald-500"
                 } focus:ring-1 focus:ring-emerald-500/20 text-text-primary rounded text-sm transition-colors focus:outline-none font-sans`}
               />
               {errors.message && (

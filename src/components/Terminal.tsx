@@ -137,7 +137,7 @@ Type 'contact' or scroll to view details.`
         {history.map((line, idx) => (
           <div key={idx} className="whitespace-pre-wrap leading-relaxed">
             {line.type === "input" && (
-              <span className="text-blue-405">
+              <span className="text-emerald-400">
                 visitor@rayanqasim:~$ <span className="text-white font-medium">{line.text}</span>
               </span>
             )}
@@ -160,7 +160,7 @@ Type 'contact' or scroll to view details.`
 
       {/* Input Form */}
       <form onSubmit={handleCommand} className="flex border-t border-neutral-200/10 px-4 py-3 bg-[#0A0A0A]">
-        <span className="text-blue-405 mr-2 shrink-0 select-none">visitor@rayanqasim:~$</span>
+        <span className="text-emerald-400 mr-2 shrink-0 select-none">visitor@rayanqasim:~$</span>
         <input
           ref={inputRef}
           type="text"

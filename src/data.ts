@@ -282,7 +282,7 @@ export const CERTIFICATIONS_DATA: Certification[] = [
     period: "August 2025",
     highlight: "Selected among top 40 builders from 1,000+ applicants in Pakistan's inaugural live AI Agents & Vibe Coding cohort. Honored with the Top Build of the Cohort award for capstone architecture.",
     skills: ["AI Agents", "n8n", "Make.com", "Cursor", "Webhooks"],
-    badgeColor: "purple"
+    badgeColor: "emerald"
   },
   {
     id: "anthropic-fluency",
@@ -300,7 +300,7 @@ export const CERTIFICATIONS_DATA: Certification[] = [
     period: "Aug & Oct 2025",
     highlight: "26+ hours intensive professional program instructed by Vaibhav Sisinty and industry leaders from Google, Microsoft, and Netflix. Covered Claude, Gemini, Hugging Face, multi-modal generation, and agent task orchestration.",
     skills: ["Gemini API", "Claude", "Hugging Face", "Model Tuning"],
-    badgeColor: "purple"
+    badgeColor: "emerald"
   },
   {
     id: "leverify-data",

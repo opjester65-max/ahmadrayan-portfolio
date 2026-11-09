@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { X, Copy, Mail, Check, FileText, Printer, ShieldCheck, Download } from "lucide-react";
 import { EXPERIENCE_DATA, EDUCATION_DATA, SKILL_CATEGORIES } from "../data";
+import LatticeLoader from "./LatticeLoader/LatticeLoader";
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -30,7 +31,9 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
   const handlePrint = () => {
     window.print();
-  };  return (
+  };
+
+  return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in transition-all">
       <div 
         className="relative w-full max-w-4xl max-h-[90vh] overflow-hidden bg-bg-primary border border-border-color rounded-lg shadow-2xl flex flex-col font-sans transition-colors"
@@ -40,9 +43,9 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
         {/* Modal Top Control Bar */}
         <div className="flex items-center justify-between px-6 py-4 bg-bg-secondary border-b border-border-color">
           <div className="flex items-center space-x-2">
-            <ShieldCheck className="w-5 h-5 text-emerald-600 dark:text-emerald-500" />
+            <ShieldCheck className="w-5 h-5 text-emerald-500 dark:text-emerald-400" />
             <span className="text-xs font-mono font-bold tracking-widest text-text-primary uppercase">
-              Record Verification Service // Ahmad Rayan Qasim
+              Official Record Verification Service // Ahmad Rayan Qasim
             </span>
           </div>
           <button 
@@ -54,11 +57,25 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           </button>
         </div>
 
-        {/* Modal Action Controls Bar */}
+        {/* Modal Action Controls Bar with LatticeLoader */}
         <div className="flex flex-wrap items-center justify-between gap-3 px-6 py-3 bg-bg-secondary border-b border-border-color">
-          <div className="flex items-center space-x-2 text-xs text-text-secondary">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span>Cryptographically Certified Undergraduate Record</span>
+          <div className="flex items-center space-x-2.5 text-xs text-text-secondary">
+            <LatticeLoader
+              status="done"
+              label="Validating cryptographic seals..."
+              doneLabel="Undergraduate Record Certified in"
+              pattern="orbit"
+              grid={3}
+              shape="round"
+              cellSize={4}
+              gap={2}
+              fontSize={11}
+              glow={true}
+              glowColor="#10b981"
+              doneColor="#10b981"
+              showTimer={true}
+              elapsed={0.9}
+            />
           </div>
           <div className="flex items-center gap-2 font-mono">
             <button
@@ -92,16 +109,16 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             <div className="flex justify-between items-start flex-wrap gap-4">
               <div>
                 <h1 className="text-3xl font-bold tracking-tight text-text-primary">{`AHMAD RAYAN QASIM`}</h1>
-                <p className="font-mono text-xs text-blue-600 dark:text-emerald-400 mt-1.5 tracking-wider uppercase font-bold">
+                <p className="font-mono text-xs text-emerald-600 dark:text-emerald-400 mt-1.5 tracking-wider uppercase font-bold">
                   AI Engineer &bull; Hackathon Winner &bull; Startup Founder (DeepBuild AI)
                 </p>
                 <p className="text-sm text-text-secondary mt-1 font-light">
-                  Multan, Pakistan &bull; iamahmadrayan@gmail.com &bull; +92 316 6461653 &bull; <a href="https://linkedin.com/in/ahmad-rayan-2a1785261" target="_blank" rel="noreferrer" className="text-blue-600 dark:text-emerald-400 hover:underline">LinkedIn</a> &bull; <a href="https://ahmadrayanqasim.vercel.app" target="_blank" rel="noreferrer" className="text-blue-600 dark:text-emerald-400 hover:underline">Portfolio</a>
+                  Multan, Pakistan &bull; iamahmadrayan@gmail.com &bull; +92 316 6461653 &bull; <a href="https://linkedin.com/in/ahmad-rayan-2a1785261" target="_blank" rel="noreferrer" className="text-emerald-600 dark:text-emerald-400 hover:underline">LinkedIn</a> &bull; <a href="https://ahmadrayanqasim.vercel.app" target="_blank" rel="noreferrer" className="text-emerald-600 dark:text-emerald-400 hover:underline">Portfolio</a>
                 </p>
               </div>
               <div className="text-right font-mono text-xs text-text-secondary border border-border-color bg-bg-secondary p-3 rounded-lg">
                 <p className="text-text-primary font-bold">AIR UNIVERSITY MULTAN</p>
-                <p className="mt-0.5">CGPA: <span className="text-blue-600 dark:text-emerald-400 font-bold">3.55</span> | DSA: <span className="text-blue-600 dark:text-emerald-400 font-bold">12/12</span></p>
+                <p className="mt-0.5">CGPA: <span className="text-emerald-600 dark:text-emerald-400 font-bold">3.55</span> | DSA: <span className="text-emerald-600 dark:text-emerald-400 font-bold">12/12</span></p>
                 <p>BS Computer Science (2024–2028)</p>
               </div>
             </div>
@@ -112,7 +129,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             <div className="md:col-span-2 space-y-6">
               <div>
                 <h2 className="text-sm font-mono font-bold text-text-primary uppercase tracking-wider mb-3 flex items-center gap-2">
-                  <span className="w-1.5 h-3 bg-blue-600 dark:bg-emerald-500 rounded-sm"></span>
+                  <span className="w-1.5 h-3 bg-emerald-600 dark:bg-emerald-500 rounded-sm"></span>
                   Professional Work Summary
                 </h2>
                 <p className="text-sm text-text-secondary font-light leading-relaxed font-sans">
@@ -123,7 +140,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               {/* Trajectory */}
               <div className="space-y-4">
                 <h2 className="text-sm font-mono font-bold text-text-primary uppercase tracking-wider flex items-center gap-2">
-                  <span className="w-1.5 h-3 bg-blue-600 dark:bg-emerald-500 rounded-sm"></span>
+                  <span className="w-1.5 h-3 bg-emerald-600 dark:bg-emerald-500 rounded-sm"></span>
                   Professional Trajectory
                 </h2>
                 {EXPERIENCE_DATA.map((exp, idx) => (
@@ -132,11 +149,11 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                       <h3 className="text-sm font-semibold text-text-primary">{exp.role}</h3>
                       <span className="text-xs font-mono text-text-secondary">{exp.period}</span>
                     </div>
-                    <p className="text-xs font-mono text-blue-600 dark:text-emerald-400 font-bold">
+                    <p className="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-bold">
                       {exp.company}
                       {exp.link && (
                         <span className="inline-block sm:inline ml-0 sm:ml-2 font-normal text-[10px] text-text-secondary">
-                          &bull; Live System: <a href={exp.link} target="_blank" rel="noreferrer" className="text-blue-600 dark:text-emerald-400 hover:underline break-all">{exp.link.replace("https://", "")}</a>
+                          &bull; Live System: <a href={exp.link} target="_blank" rel="noreferrer" className="text-emerald-600 dark:text-emerald-400 hover:underline break-all">{exp.link.replace("https://", "")}</a>
                         </span>
                       )}
                     </p>
@@ -154,13 +171,13 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             <div className="space-y-6">
               <div>
                 <h2 className="text-sm font-mono font-bold text-text-primary uppercase tracking-wider mb-3 flex items-center gap-2">
-                  <span className="w-1.5 h-3 bg-blue-600 dark:bg-emerald-500 rounded-sm"></span>
+                  <span className="w-1.5 h-3 bg-emerald-600 dark:bg-emerald-500 rounded-sm"></span>
                   Categorized Competencies
                 </h2>
                 <div className="space-y-4">
                   {SKILL_CATEGORIES.map((cat, idx) => (
                     <div key={idx} className="bg-bg-secondary border border-border-color p-3 rounded-lg space-y-2">
-                      <span className="text-xs font-mono font-bold text-blue-600 dark:text-emerald-400 uppercase tracking-tight">
+                      <span className="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-tight">
                         {cat.category}
                       </span>
                       <div className="space-y-1">
@@ -179,28 +196,28 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               {/* Academic Highlights */}
               <div>
                 <h2 className="text-sm font-mono font-bold text-text-primary uppercase tracking-wider mb-3 flex items-center gap-2">
-                  <span className="w-1.5 h-3 bg-blue-600 dark:bg-emerald-500 rounded-sm"></span>
+                  <span className="w-1.5 h-3 bg-emerald-600 dark:bg-emerald-500 rounded-sm"></span>
                   Foundational Strengths & Honors
                 </h2>
                 <div className="bg-bg-secondary border border-border-color p-3 rounded-lg space-y-2 text-xs">
                   <div className="border-b border-border-color pb-1.5 font-sans">
-                    <span className="font-mono text-blue-600 dark:text-emerald-400 font-bold block">🏆 1ST PLACE — MLH HACKATHON</span>
+                    <span className="font-mono text-emerald-600 dark:text-emerald-400 font-bold block">🏆 1ST PLACE — MLH HACKATHON</span>
                     <span className="text-[10px] text-text-secondary">Hacktoberfest Hack Day Multan (Oct 31, 2026). MandiLinkAI deployed live on Vercel in 60 mins.</span>
                   </div>
                   <div className="border-b border-border-color pb-1.5 font-sans">
-                    <span className="font-mono text-blue-600 dark:text-emerald-400 font-bold block">PRESIDENT — AUSC (2026–2027)</span>
+                    <span className="font-mono text-emerald-600 dark:text-emerald-400 font-bold block">PRESIDENT — AUSC (2026–2027)</span>
                     <span className="text-[10px] text-text-secondary">Air University Startup Club in coordination with Business Incubation Center (BIC).</span>
                   </div>
                   <div className="border-b border-border-color pb-1.5 font-sans">
-                     <span className="font-mono text-blue-600 dark:text-emerald-400 font-bold block">12/12 PERFECT SCORE</span>
+                     <span className="font-mono text-emerald-600 dark:text-emerald-400 font-bold block">12/12 PERFECT SCORE</span>
                     <span className="text-[10px] text-text-secondary">Maximum grade points in Data Structures & Algorithms.</span>
                   </div>
                   <div className="border-b border-border-color pb-1.5 font-sans">
-                    <span className="font-mono text-blue-600 dark:text-emerald-400 font-bold block">TOP BUILD AWARD</span>
+                    <span className="font-mono text-emerald-600 dark:text-emerald-400 font-bold block">TOP BUILD AWARD</span>
                     <span className="text-[10px] text-text-secondary">Selected top 40 from 1,000+ applicants in Leverify AI Cohort.</span>
                   </div>
                   <div className="font-sans">
-                    <span className="font-mono text-blue-600 dark:text-emerald-400 font-bold block">GLOBAL LEADERSHIP COHORT</span>
+                    <span className="font-mono text-emerald-600 dark:text-emerald-400 font-bold block">GLOBAL LEADERSHIP COHORT</span>
                     <span className="text-[10px] text-text-secondary">Global Nobel Intern (Nobel Navigators). Academics Head & UNHRC Chair at MUN.</span>
                   </div>
                 </div>
