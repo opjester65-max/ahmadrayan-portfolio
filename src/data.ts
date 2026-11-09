@@ -14,33 +14,75 @@ export const PORTFOLIO_METRIC_CARDS = [
     monoCode: "std::vector<Node*> dsa_score(12);"
   },
   {
-    value: "FlyRank AI",
-    label: "AI Engineering",
-    institution: "Production RAG & API Flows",
-    monoCode: "async def stream_rag_audit():"
+    value: "1st Place",
+    label: "MLH Hackathon",
+    institution: "MandiLinkAI Live 60-min Deploy",
+    monoCode: "deploy_status = 'WINNER_1ST_PLACE';"
   }
 ];
 
 export const PROJECTS_DATA: Project[] = [
   {
+    id: "mandilink-ai",
+    title: "MandiLinkAI",
+    subtitle: "🏆 1st Place — MLH Hacktoberfest Hack Day Multan (Oct 2026)",
+    badge: "🏆 1st Place MLH Hackathon",
+    category: "AI_MARKETPLACE / REAL-TIME AGENTIC",
+    description: "AI-powered agricultural marketplace intelligence tool built and deployed live under a 60-minute constraint. Orchestrates real-time commodity pricing flows via Gemini API, structured data via Snowflake CoCo, and agent registration on Solana Agent Registry.",
+    architecture: "High-velocity live deployment on Vercel. Ingests mandi commodities pricing through Gemini AI real-time parsing, persists validated schema structures into Snowflake CoCo, and executes automated verifiable agent registration on the Solana Agent Registry.",
+    metrics: ["1st Place MLH", "60-Min Deploy", "Gemini AI Core", "Solana Registry"],
+    tags: ["Gemini AI", "Snowflake", "Solana", "Vercel", "60-min Deploy"],
+    isFeatured: true
+  },
+  {
     id: "lawledge",
-    title: "LawLedge: Legal Portal & Grievance System",
+    title: "LawLedge",
     category: "FULL-STACK / REAL-TIME WEBSOCKETS",
-    description: "An end-to-end civic legal portal and grievance reporting platform that automates case routing, evidence management, and real-time community collaboration.",
+    description: "Full-stack legal portal and community grievance system with real-time WebSocket communication, multi-role RBAC via Supabase Auth, automated PDF complaint generation (jsPDF), and production deployment on Vercel.",
     architecture: "React 18 SPA + Node.js Socket.IO persistent WebSocket hub. Supabase PostgreSQL relational database with Auth role resolution (User, Volunteer, Admin) and encrypted file buckets. Client-side jsPDF document engine compiling official authority-templated complaint filings with zero server latency.",
     metrics: ["Real-Time WebSockets", "Role-Based Access Control", "Instant PDF Engine", "PostgreSQL Storage"],
-    tags: ["React 18", "Node.js", "Socket.IO", "Supabase", "PostgreSQL", "Tailwind CSS", "jsPDF"],
+    tags: ["React 18", "Node.js", "Socket.IO", "Supabase", "PostgreSQL", "Vercel"],
     githubUrl: "https://github.com/ahmadrayan-create/lawledge-platform-1"
   },
   {
+    id: "secureshell",
+    title: "SecureShell",
+    category: "LOW_LEVEL / SYSTEMS_SECURITY",
+    description: "Custom UNIX command-line shell with dual-hash Bloom Filter malware detection (O(1), <5% false positive), Trie + Treap autocompletion, and chroot jail sandboxing for untrusted binaries.",
+    architecture: "Dual-hash DJB2/SDBM Bloom Filter malware shield for pre-execution threat detection. Trie auto-completion backed by balanced Treap structures, and hardware-isolated chroot jail execution sandbox restricting untrusted binaries.",
+    metrics: ["<5% Bloom False Positives", "Sub-ms Lookup Latency", "Chroot Jail Isolation", "Zero Memory Leaks"],
+    tags: ["C++", "POSIX", "Bloom Filter", "Treap", "Chroot"],
+    githubUrl: "https://github.com/ahmadrayan-create/secure-algorithmic-shell"
+  },
+  {
+    id: "codeconnect",
+    title: "CodeConnect",
+    category: "DEEP-TECH / SYSTEMS_COMPILER",
+    description: "Educational platform bridging C# WinForms (managed) with a 32-bit x86 Assembly DLL via P/Invoke. Features 4-bit bitwise packing, double-buffered rendering, and strict stack frame management.",
+    architecture: "Unmanaged-to-managed bridge using C# P/Invoke (__cdecl/__stdcall) connecting WinForms to a custom 32-bit x86 Assembly DLL (NASM). 4-bit bitwise data packing for FlowID/NodeType, strict stack frames (push ebp), and double-buffered rendering.",
+    metrics: ["32-bit NASM DLL", "C# P/Invoke Bridge", "4-Bit Bitwise Packing", "Zero Memory Segfaults"],
+    tags: ["C#", "WinForms", "x86 Assembly", "P/Invoke", "NASM"],
+    githubUrl: "https://github.com/ahmadrayan-create/CodeConnect_COAL_Project"
+  },
+  {
     id: "usage-metering",
-    title: "Production Usage Metering & Billing Engine",
+    title: "Production Metering & Billing Engine",
     category: "BACKEND / FINTECH API",
-    description: "An enterprise usage-based billing platform engineered for SaaS providers to accurately meter API consumption, enforce quotas, and automate payment processing.",
+    description: "Enterprise SaaS billing platform with integer micro-cent precision, Stripe webhook idempotency enforcement, dynamic quota enforcement engine, and ACID-compliant PostgreSQL audit logs. Containerized via Docker.",
     architecture: "Asynchronous HTTP metering engine built with Python & FastAPI using integer-based micro-cent precision to eliminate floating-point rounding errors. Implements strict idempotency keys, Stripe webhook signature verification, dynamic tier quota enforcement, and ACID PostgreSQL transactional event logs.",
     metrics: ["Micro-Cent Precision", "100% Idempotency", "Zero Revenue Leakage", "ACID Event Logs"],
-    tags: ["Python", "FastAPI", "PostgreSQL", "Stripe API", "Docker", "Pydantic", "Asyncio"],
+    tags: ["Python", "FastAPI", "PostgreSQL", "Stripe API", "Docker"],
     githubUrl: "https://github.com/ahmadrayan-create/flyrank-capstone-metering-billing"
+  },
+  {
+    id: "vectorglide-3d",
+    title: "VectorGlide 3D",
+    category: "MATH_SIMULATION / GEOMETRY",
+    description: "3D drone trajectory simulation platform built with React Three Fiber, evaluating space curves r(t), Frenet-Serret frames T(t)/N(t), and arc-length reparameterization for constant-speed navigation.",
+    architecture: "Evaluates r(t) space curves, velocity, speed, and arc length. Renders 500+ point curves with Frenet-Serret frames (T, N, B) and coordinate plane projections. Custom Blender low-poly GLTF drone asset with arc-length reparameterization for constant speed.",
+    metrics: ["500+ Point Trajectories", "Frenet-Serret Kinematics", "WebGL 1080p Telemetry", "Arc-Length Reparameterization"],
+    tags: ["React", "Three.js", "React Three Fiber", "Math.js", "Blender", "GLTF"],
+    githubUrl: "https://github.com/ahmadrayan-create/VectorGlide-3D"
   },
   {
     id: "llm-triage",
@@ -63,16 +105,6 @@ export const PROJECTS_DATA: Project[] = [
     githubUrl: "https://github.com/ahmadrayan-create/cattlefarm-dbms"
   },
   {
-    id: "codeconnect",
-    title: "CodeConnect: Visual x86 Assembly & System Bridge",
-    category: "DEEP-TECH / SYSTEMS_COMPILER",
-    description: "An educational deep-tech platform designed for computer science students to visualize low-level x86 assembly logic and register operations via an interactive GUI.",
-    architecture: "Unmanaged-to-managed bridge using C# P/Invoke (__cdecl/__stdcall) connecting WinForms to a custom 32-bit x86 Assembly DLL (NASM). 4-bit bitwise data packing for FlowID/NodeType, strict stack frames (push ebp), and double-buffered rendering.",
-    metrics: ["32-bit NASM DLL", "C# P/Invoke Bridge", "4-Bit Bitwise Packing", "Zero Memory Segfaults"],
-    tags: ["C# WinForms", "x86 Assembly", "NASM", "P/Invoke", "C++", "Systems Architecture"],
-    githubUrl: "https://github.com/ahmadrayan-create/CodeConnect_COAL_Project"
-  },
-  {
     id: "eld-engine",
     title: "Enterprise ELD & Compliance Engine",
     category: "FULL-STACK / LOGISTICS",
@@ -81,26 +113,6 @@ export const PROJECTS_DATA: Project[] = [
     metrics: ["100% FMCSA Compliant", "Dynamic SVG Logs", "GIS Path Routing", "Automated HOS Schedulers"],
     tags: ["TypeScript", "React", "Django", "Python", "Leaflet.js", "Tailwind CSS", "SVG"],
     githubUrl: "https://github.com/ahmadrayan-create/eld-compliance-engine"
-  },
-  {
-    id: "vectorglide-3d",
-    title: "VectorGlide 3D: Trajectory Simulation Engine",
-    category: "MATH_SIMULATION / GEOMETRY",
-    description: "A 3D web simulation platform modeling autonomous drone trajectories via space curve calculus to visualize kinematic paths and MPC navigation telemetry.",
-    architecture: "Evaluates r(t) space curves, velocity, speed, and arc length. Renders 500+ point curves with Frenet-Serret frames (T, N, B) and coordinate plane projections. Custom Blender low-poly GLTF drone asset with arc-length reparameterization for constant speed.",
-    metrics: ["500+ Point Trajectories", "Frenet-Serret Kinematics", "WebGL 1080p Telemetry", "Arc-Length Reparameterization"],
-    tags: ["React", "Three.js", "React Three Fiber", "Math.js", "GLTF / Blender", "Linear Algebra"],
-    githubUrl: "https://github.com/ahmadrayan-create/VectorGlide-3D"
-  },
-  {
-    id: "secureshell",
-    title: "Sandboxed POSIX Shell Subsystem & Security Shield",
-    category: "LOW_LEVEL / SYSTEMS_SECURITY",
-    description: "A high-performance custom UNIX terminal subsystem engineered for system administrators requiring secure command routing and kernel-level sandboxing.",
-    architecture: "Dual-hash DJB2/SDBM Bloom Filter malware shield for pre-execution threat detection. Trie auto-completion backed by balanced Treap structures, and hardware-isolated chroot jail execution sandbox restricting untrusted binaries.",
-    metrics: ["<5% Bloom False Positives", "Sub-ms Lookup Latency", "Chroot Jail Isolation", "Zero Memory Leaks"],
-    tags: ["C++", "POSIX System Calls", "Treaps", "Bloom Filters", "Tries", "Chroot Sandbox"],
-    githubUrl: "https://github.com/ahmadrayan-create/secure-algorithmic-shell"
   },
   {
     id: "kisan-zarai-bazar",
@@ -125,26 +137,39 @@ export const PROJECTS_DATA: Project[] = [
 
 export const EXPERIENCE_DATA: Experience[] = [
   {
-    role: "AI Engineering Intern",
+    role: "Backend AI Engineering Intern",
     company: "FlyRank AI",
     period: "July 2026 – September 2026",
     isVenture: false,
     badge: "Production AI Systems",
     bullets: [
-      "Retrieval & Grounding (RAG): Architected retrieval-backed answer flows and structured-output pipelines (extraction, classification, drafting), establishing a verifiable audit trail between source data and AI inferences.",
-      "API Contracts & Resilience: Defined robust REST endpoints with strict Pydantic payload schemas, standardized status codes, authentication wrappers, and resilient retry loops to eliminate failure modes under high-concurrency production workloads.",
-      "Evaluation & Observability: Formulated lightweight evaluation rubrics, automated testing harnesses, and observability plans to transition experimental AI features into predictable, audit-grade production services."
+      "Developed RAG (Retrieval-Augmented Generation) answer flows and structured-output pipelines for extraction, classification, and drafting tasks.",
+      "Defined FastAPI endpoint contracts — payload schemas, status codes, error-handling layers — prior to implementation.",
+      "Engineered lightweight evaluation rubrics and custom test scripts to transition experimental AI features into production-grade services.",
+      "Implemented authentication wrappers and automated retry mechanisms under strict remote-first builder standards."
+    ]
+  },
+  {
+    role: "AI/ML Engineering Intern",
+    company: "SafeX Solutions",
+    period: "July 2026 – September 2026",
+    isVenture: false,
+    badge: "AI/ML Systems",
+    bullets: [
+      "Translated ML theory into production-ready pipelines; refined automated preprocessing and feature validation layers.",
+      "Implemented and evaluated iterative AI/ML model versions, optimizing prediction accuracy and variance reduction.",
+      "Bridged algorithmic development with structured system workflows for distributed enterprise environments."
     ]
   },
   {
     role: "Global Nobel Intern",
     company: "Nobel Navigators",
-    period: "June 2026 Cohort – Present",
+    period: "June 2026 – November 2026",
     isVenture: false,
     badge: "Global Leadership Cohort",
     bullets: [
       "Selected for the intensive, multi-stage global internship program focused on advanced international leadership, strategic technology integration, and high-stakes problem-solving.",
-      "Engage in high-frequency collaborative modules (multiple live sessions weekly) spanning foundational global leadership, cross-cultural project execution, and strategic technology transformation."
+      "Engaged in high-frequency collaborative modules spanning foundational global leadership, cross-cultural project execution, and strategic technology transformation."
     ]
   },
   {
@@ -153,30 +178,30 @@ export const EXPERIENCE_DATA: Experience[] = [
     period: "Aug 2025 – Present",
     isVenture: true,
     link: "https://deepbuild-ai-services.vercel.app",
-    badge: "Venture Agency",
-    tagline: "An AI engineering agency and strategic consultancy delivering custom web development, agentic workflow automations, bespoke AI application engineering, and technical advisory.",
+    badge: "Venture Consultancy",
+    tagline: "Independent AI engineering consultancy and technical prototyping lab — delivering custom web applications, agentic workflow automations (n8n, Make.com), and bespoke LLM integrations.",
     bullets: [
-      "Agentic Workflow Automation: Architected stateful n8n and Make.com automation sequences connecting complex business processes with autonomous LLM reasoning, external APIs, and Apify web scrapers.",
-      "Custom Web Development: Built high-performance, brand-tailored websites and web applications utilizing Next.js, React, and Tailwind CSS, featuring streaming UIs for zero-latency user experiences.",
-      "Bespoke AI Applications & Engineering: Developed custom AI prototypes (RAG tutors, ReAct function-calling agents) and engineered solutions to troubleshoot, optimize, and resolve issues in existing client systems.",
-      "AI Strategy & Consultancy: Formulated technical evaluation frameworks to consult business owners on identifying high-ROI operational bottlenecks solvable via AI automation."
+      "Independent technical consultancy and technical prototyping lab delivering custom web applications, agentic workflow automations (n8n, Make.com), and bespoke LLM integrations.",
+      "Architected n8n and Make.com automation sequences connecting complex business processes with autonomous LLM reasoning, external APIs, and Apify web scrapers.",
+      "Engineered high-performance web applications utilizing Next.js, React, and Tailwind CSS, featuring streaming UIs for zero-latency user experiences.",
+      "Formulated technical evaluation frameworks and bespoke prototypes (RAG knowledge bases, ReAct function-calling agents) resolving architectural bottlenecks."
     ],
     pillars: [
       {
-        title: "Custom Web Development",
-        description: "High-performance, conversion-optimized digital experiences utilizing Next.js, React, and Tailwind CSS. Modern, SEO-ready, and edge-deployed in days."
+        title: "Technical Prototyping",
+        description: "Bespoke LLM integrations, RAG knowledge bases, and ReAct function-calling agents engineered to validate technical feasibility."
       },
       {
         title: "Agentic Workflow Automation",
-        description: "Stateful automation sequences in n8n and Make.com connecting business logic with autonomous LLM reasoning, APIs, and web scrapers. Achieve 60–80% efficiency gains."
+        description: "Stateful automation sequences in n8n and Make.com connecting business logic with autonomous LLM reasoning, APIs, and web scrapers."
       },
       {
-        title: "Bespoke AI Applications",
-        description: "Domain-specific AI applications including RAG knowledge bases, ReAct function-calling agents, and custom GPT models tailored to proprietary data."
+        title: "Custom Web Applications",
+        description: "High-performance digital experiences utilizing Next.js, React, and Tailwind CSS with streaming UI architecture."
       },
       {
         title: "Strategic AI Advisory",
-        description: "Comprehensive audits of digital infrastructure and operational workflows, delivering concrete technical roadmaps to implement high-ROI AI agent architectures."
+        description: "Technical evaluation frameworks and architecture audits helping engineering teams identify high-ROI automation bottlenecks."
       }
     ]
   },
@@ -195,49 +220,69 @@ export const EXPERIENCE_DATA: Experience[] = [
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
-    category: "Languages & Core Systems",
+    category: "AI & Agentic Orchestration",
     skills: [
-      { name: "Python", level: 94, info: "FastAPI, Asyncio, Pydantic" },
-      { name: "C++", level: 90, info: "POSIX, Bloom Filters, Treaps" },
-      { name: "C# / .NET", level: 92, info: "WPF, WinForms, P/Invoke, EF Core" },
-      { name: "TypeScript / JavaScript", level: 88, info: "React 18, Next.js, Node.js" },
-      { name: "SQL (T-SQL / PostgreSQL)", level: 90, info: "Stored Procs, Triggers, RDBMS" },
-      { name: "32-bit x86 Assembly", level: 82, info: "NASM, Bitwise Registers, Stacks" }
+      { name: "RAG Pipelines & Vector Embeddings", level: 96, info: "Retrieval Grounding & Audits" },
+      { name: "FastAPI & Pydantic", level: 95, info: "Endpoint Schemas & Self-Healing" },
+      { name: "Gemini API & Anthropic API", level: 95, info: "Multi-Modal & ReAct Agents" },
+      { name: "OpenRouter & Prompt Engineering", level: 94, info: "Precision Role Definition" },
+      { name: "n8n & Make.com", level: 95, info: "Production Multi-Agent Sequences" },
+      { name: "YOLOv8 & S-BERT", level: 88, info: "Deep SORT & Semantic Search" },
+      { name: "Cursor, v0 & Lovable", level: 95, info: "AI-Orchestrated Rapid Prototyping" },
+      { name: "Apify & BeautifulSoup", level: 88, info: "Ethical Automated Scraping" }
     ]
   },
   {
-    category: "AI & Agentic Orchestration",
+    category: "Languages & Core Systems",
     skills: [
-      { name: "n8n & Make.com", level: 95, info: "Production Multi-Agent Sequences" },
-      { name: "Gemini & OpenAI APIs", level: 95, info: "RAG, ReAct, Multi-Modal" },
-      { name: "Cursor, v0 & Lovable", level: 95, info: "AI-Orchestrated Rapid Prototyping" },
-      { name: "Anthropic Claude & Perplexity", level: 92, info: "Deep Reasoning & Research" },
-      { name: "Apify & BeautifulSoup", level: 88, info: "Ethical Automated Scraping" },
-      { name: "Prompt Engineering & Evals", level: 94, info: "Self-Healing Pydantic Loops" }
+      { name: "Python", level: 95, info: "FastAPI, Asyncio, Pydantic" },
+      { name: "C++", level: 90, info: "POSIX, Bloom Filters, Treaps" },
+      { name: "C# / .NET", level: 92, info: "WPF, WinForms, P/Invoke, EF Core" },
+      { name: "TypeScript / JavaScript", level: 90, info: "React 18, Next.js, Node.js" },
+      { name: "SQL (T-SQL & PostgreSQL)", level: 92, info: "Stored Procs, Triggers, RDBMS" },
+      { name: "32-bit x86 Assembly", level: 82, info: "NASM, Bitwise Registers, Stacks" }
     ]
   },
   {
     category: "Frameworks, Architecture & Cloud",
     skills: [
-      { name: "FastAPI & Django", level: 92, info: "High-Throughput Microservices" },
+      { name: "FastAPI & Docker", level: 93, info: "Containerized Microservices" },
+      { name: "PostgreSQL & Supabase Auth", level: 92, info: "RBAC, RLS, Edge Relational DB" },
       { name: "React 18 & Next.js", level: 90, info: "Edge Streaming, Tailored SPAs" },
-      { name: "PostgreSQL & Supabase", level: 90, info: "RLS, Real-Time Hubs, Edge DB" },
-      { name: "SQL Server & EF Core", level: 90, info: "15+ Normalized Tables, Procs" },
-      { name: "Socket.IO & WebSockets", level: 88, info: "Live Bidirectional Messaging" },
-      { name: "Docker & Docker Compose", level: 86, info: "Multi-Stage Containers" }
+      { name: "Socket.IO & WebSockets", level: 90, info: "Live Bidirectional Messaging" },
+      { name: "Framer Motion & Tailwind CSS", level: 92, info: "Fluid System Animations" },
+      { name: "SQL Server & EF Core", level: 90, info: "15+ Normalized Tables, Procs" }
     ]
   }
 ];
 
 export const CERTIFICATIONS_DATA: Certification[] = [
   {
+    id: "hacktoberfest-1st",
+    title: "🏆 1st Place — Hacktoberfest Hack Day Multan",
+    issuer: "Major League Hacking (MLH) × AWS Student Builder Group × BZU",
+    period: "October 31, 2026",
+    highlight: "Built and deployed MandiLinkAI live on Vercel under a strict 60-minute time constraint. Stack: Gemini AI, Snowflake CoCo, Solana Agent Registry, GitHub Copilot.",
+    skills: ["Gemini AI", "Snowflake CoCo", "Solana", "Vercel", "Rapid Prototyping"],
+    badgeColor: "emerald"
+  },
+  {
+    id: "ausc-president",
+    title: "President — Air University Startup Club (AUSC)",
+    issuer: "Business Incubation Center (BIC)",
+    period: "2026–2027 Term",
+    highlight: "Elected to lead the university's entrepreneurship society in coordination with the Business Incubation Center (BIC). Mentors student startups and coordinates strategic growth programs.",
+    skills: ["Startup Mentorship", "Executive Leadership", "Incubation", "Strategic Growth"],
+    badgeColor: "blue"
+  },
+  {
     id: "leverify-topbuild",
-    title: "Top Build of the Cohort & Elite Builder Award",
+    title: "Top Build Award — Leverify AI Cohort",
     issuer: "Leverify Quest",
     period: "August 2025",
-    highlight: "Selected out of 1,000+ applicants into Pakistan's inaugural live AI Agents & Vibe Coding cohort (Top 40 builders). Honored with the Top Build of the Cohort award for the capstone that directly laid the operational foundation for DeepBuild AI.",
+    highlight: "Selected among top 40 builders from 1,000+ applicants in Pakistan's inaugural live AI Agents & Vibe Coding cohort. Honored with the Top Build of the Cohort award for capstone architecture.",
     skills: ["AI Agents", "n8n", "Make.com", "Cursor", "Webhooks"],
-    badgeColor: "emerald"
+    badgeColor: "purple"
   },
   {
     id: "anthropic-fluency",
@@ -291,8 +336,13 @@ export const EDUCATION_DATA = {
   degree: "Bachelor of Science in Computer Science",
   institution: "Air University Multan",
   period: "Expected Graduation: May 2028 (5th Semester Ongoing)",
-  statusLine: "CGPA: 3.55 | Maximum 12/12 Grade Points in Data Structures & Algorithms",
+  statusLine: "CGPA: 3.55 | DSA: 12/12",
   leadership: [
+    {
+      role: "President (2026–2027 Term)",
+      organization: "Air University Startup Club (AUSC) & BIC",
+      highlight: "Elected to lead the university's entrepreneurship society in coordination with the Business Incubation Center (BIC). Mentors student startups and coordinates strategic growth programs."
+    },
     {
       role: "Academics Head & Chair of UNHRC",
       organization: "Air University Model United Nations",
@@ -309,11 +359,6 @@ export const EDUCATION_DATA = {
       highlight: "Orchestrating technical hackathons, competitive coding workshops, and campus engineering meetups."
     },
     {
-      role: "Executive Member",
-      organization: "Student Club (Umbrella Society)",
-      highlight: "Executive member of the central governing body overseeing all university clubs, events, and student initiatives."
-    },
-    {
       role: "Delegation Head (Germany)",
       organization: "Model United Nations & Global Village",
       highlight: "Led an 11-member team representing German culture and international policy at Model United Nations."
@@ -323,24 +368,25 @@ export const EDUCATION_DATA = {
 
 export const ACHIEVEMENTS_DATA: Achievement[] = [
   {
+    role: "🏆 1st Place Winner",
+    organization: "Hacktoberfest Hack Day Multan (MLH × AWS × BZU)",
+    impact: "Built and deployed MandiLinkAI live on Vercel under a strict 60-minute time constraint. Stack: Gemini AI, Snowflake CoCo, Solana Agent Registry, GitHub Copilot (Oct 31, 2026).",
+    image: "https://i.ibb.co/ycdTDXcc/Whats-App-Image-2026-11-04-at-6-56-16-PM-1.jpg",
+    credentialUrl: "https://lnkd.in/p/drnDqw2T"
+  },
+  {
     role: "Chair of UNHRC",
     organization: "Model United Nations",
     impact: "Presided over diplomatic committee sessions, leading high-stakes negotiation and resolution drafting.",
-    image: "/src/assets/images/unhrc_achievement_1779702400408.png",
-    credentialUrl: "https://deepbuild-ai-services.vercel.app/"
+    image: "https://i.ibb.co/p6zfNDV5/MUN-GP.jpg",
+    credentialUrl: "https://lnkd.in/p/dZc3pVGp"
   },
   {
     role: "Operations Lead (Usher)",
     organization: "TechXhibit South Punjab",
     impact: "Coordinated the region’s largest tech exhibition, overseeing logistics for 130+ AI, App Dev, and Computer Vision project deployments.",
-    image: "/src/assets/images/techx_achievement_1779702424415.png",
-    credentialUrl: "https://deepbuild-ai-services.vercel.app/"
-  },
-  {
-    role: "Founder / Pitch Finalist",
-    organization: "BrandScape Entrepreneurship Gala",
-    impact: "Recognized for high-impact pitch and structural execution of Blue Barn, a data-driven livestock asset management system.",
-    image: "/src/assets/images/brandscape_achievement_1779702443797.png",
-    credentialUrl: "https://deepbuild-ai-services.vercel.app/"
+    image: "https://i.ibb.co/67dkDvqG/techfest.jpg",
+    credentialUrl: "https://lnkd.in/p/dENwXpRh"
   }
 ];
+

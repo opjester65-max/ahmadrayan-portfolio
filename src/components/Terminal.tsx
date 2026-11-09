@@ -46,26 +46,29 @@ export default function Terminal({ onVerifyRecord, onScrollToSection }: Terminal
       case "about":
         newHistory.push({
           type: "output",
-          text: `Ahmad Rayan Qasim — AI Engineer & Startup Founder.
-Undergraduate CS candidate at Air University Multan (CGPA: 3.55, 5th Semester Ongoing).
-Flawless maximum grade points (12/12) in Data Structures & Algorithms.
-Former AI Engineering Intern at FlyRank AI (July 2026 – Sept 2026; RAG & evaluation pipelines).
-Global Nobel Intern at Nobel Navigators.
-Founder & Lead AI Solutions Architect at DeepBuild AI Services (Live: deepbuild-ai-services.vercel.app).`
+          text: `Ahmad Rayan Qasim — 3rd-Year CS Student · AI Engineer · Hackathon Winner · Startup Founder.
+Undergraduate at Air University Multan (CGPA: 3.55 | DSA: 12/12).
+🏆 1st Place — Hacktoberfest Hack Day Multan (MLH × AWS × BZU, Oct 31, 2026).
+President — Air University Startup Club (AUSC, 2026–2027 Term).
+Backend AI Engineering Intern at FlyRank AI (July 2026 – Sept 2026).
+AI/ML Engineering Intern at SafeX Solutions (July 2026 – Sept 2026).
+Global Nobel Intern at Nobel Navigators (June 2026 – Nov 2026).
+Founder & Lead AI Solutions Architect at DeepBuild AI Services.
+Open to remote SWE / AI Engineering roles globally.`
         });
         break;
       case "projects":
         newHistory.push({
           type: "output",
           text: `=== FLAGSHIP SYSTEMS REGISTERED ===
-[1] LAWLEDGE: Real-time legal grievance portal (Socket.IO, Supabase, jsPDF).
-[2] USAGE METERING & BILLING: Async micro-cent billing engine (Python, FastAPI, Stripe API, Docker).
-[3] LLM SUPPORT TRIAGE: Microservice intent parsing with self-healing Pydantic loops (FastAPI, OpenRouter).
-[4] BLUE BARN: Enterprise AgriTech DBMS. 15+ normalized tables, 54 stored procedures.
-[5] CODECONNECT: Visual x86 Assembly & C# P/Invoke unmanaged system bridge.
-[6] ENTERPRISE ELD: FMCSA-compliant HOS fleet routing & SVG log sheet generator.
-[7] VECTORGLIDE 3D: Kinematic drone trajectory simulator using Frenet-Serret frames.
-[8] SECURESHELL: C++ POSIX terminal subsystem with Bloom filter malware shield & chroot.
+[1] MANDILINKAI: 🏆 1st Place MLH Hackathon agritech intelligence (Gemini AI, Snowflake, Solana).
+[2] LAWLEDGE: Real-time legal grievance portal (React 18, Node.js, Socket.IO, Supabase, Vercel).
+[3] SECURESHELL: Custom UNIX shell with Bloom Filter malware detection & chroot jail (C++, Treaps).
+[4] CODECONNECT: Visual x86 Assembly & C# WinForms unmanaged P/Invoke system bridge.
+[5] USAGE METERING & BILLING: Enterprise micro-cent billing engine (Python, FastAPI, Stripe API, Docker).
+[6] VECTORGLIDE 3D: Kinematic drone trajectory simulator with Frenet-Serret frames (React Three Fiber).
+[7] LLM SUPPORT TRIAGE: Microservice intent parsing with self-healing Pydantic loops (FastAPI, OpenRouter).
+[8] BLUE BARN: Enterprise AgriTech DBMS. 15+ normalized tables, 54 stored procedures.
 Type 'contact' or scroll to view details.`
         });
         break;
@@ -73,9 +76,9 @@ Type 'contact' or scroll to view details.`
         newHistory.push({
           type: "output",
           text: `=== TECHNOLOGY CORE STACK ===
-* Languages: Python (FastAPI/Pydantic) | C++ (POSIX/Treaps) | C# (.NET/WPF/PInvoke) | TypeScript/React 18 | SQL (T-SQL/Postgres) | 32-bit x86 ASM
-* AI & Agents: n8n | Make.com | Gemini API | OpenAI API | Claude | Cursor | Lovable | Apify | Evaluation Evals
-* Frameworks & Infra: FastAPI | Next.js | Supabase | SQL Server | Socket.IO | Docker | Vercel`
+* AI Engineering: RAG Pipelines, Vector Embeddings, FastAPI, Pydantic, Gemini API, Anthropic API, OpenRouter, n8n, Make.com, Supabase Auth, YOLOv8, S-BERT, Prompt Engineering
+* Languages: Python | C++ (POSIX, Bloom Filters) | C# (.NET, WPF, P/Invoke) | TypeScript/JavaScript | SQL (T-SQL & PostgreSQL) | 32-bit x86 Assembly
+* Frameworks & Infra: FastAPI, Docker, PostgreSQL, Supabase, React 18, Next.js, Socket.IO, Framer Motion, Tailwind CSS`
         });
         break;
       case "cv":

@@ -1,6 +1,8 @@
 export interface Project {
   id: string;
   title: string;
+  subtitle?: string;
+  badge?: string;
   category: string;
   description: string;
   architecture: string;
@@ -8,6 +10,7 @@ export interface Project {
   tags: string[];
   githubUrl?: string;
   liveUrl?: string;
+  isFeatured?: boolean;
 }
 
 export interface ServicePillar {

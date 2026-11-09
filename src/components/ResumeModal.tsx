@@ -21,7 +21,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
       exp => `### ${exp.role} | ${exp.company} (${exp.period})\n${exp.bullets.map(b => `- ${b}`).join("\n")}`
     ).join("\n\n");
 
-    const markdownCV = `# AHMAD RAYAN QASIM\nMultan, Pakistan | iamahmadrayan@gmail.com | +92 316 6461653\nLinkedIn: https://www.linkedin.com/in/ahmadrayandev | GitHub: https://github.com/ahmadrayan-create\n\n## ACADEMIC STANDING\nBS Computer Science | Air University Multan (CGPA: 3.55, 5th Semester Ongoing)\nMaximum 12/12 Grade Points in Data Structures & Algorithms\n\n## TECHNICAL SKILLS\n${skillsText}\n\n## PROFESSIONAL EXPERIENCE\n${expText}\n\n## LEADERSHIP & KEY HONORS\n- Founder & Lead AI Solutions Architect, DeepBuild AI Services\n- AI Engineering Intern, FlyRank AI (July 2026 – September 2026)\n- Global Nobel Intern, Nobel Navigators\n- Top Build of the Cohort Award, Leverify Quest\n- Chair of UNHRC & Academics Head, Air University MUN\n- Appointed Team Coordinator, University Debating Society\n- Core Member, TechBist Society`;
+    const markdownCV = `# AHMAD RAYAN QASIM\nMultan, Pakistan | iamahmadrayan@gmail.com | +92 316 6461653\nLinkedIn: https://linkedin.com/in/ahmad-rayan-2a1785261 | GitHub: https://github.com/ahmadrayan-create | Portfolio: https://ahmadrayanqasim.vercel.app\n\n## ACADEMIC STANDING\nBS Computer Science | Air University Multan (CGPA: 3.55, 5th Semester Ongoing)\nMaximum 12/12 Grade Points in Data Structures & Algorithms\n\n## TECHNICAL SKILLS\n${skillsText}\n\n## PROFESSIONAL EXPERIENCE\n${expText}\n\n## LEADERSHIP & KEY HONORS\n- 🏆 1st Place — Hacktoberfest Hack Day Multan (MLH × AWS × BZU, Oct 31, 2026)\n- President — Air University Startup Club (AUSC), 2026–2027 Term\n- Backend AI Engineering Intern, FlyRank AI (July 2026 – September 2026)\n- AI/ML Engineering Intern, SafeX Solutions (July 2026 – September 2026)\n- Global Nobel Intern, Nobel Navigators (June 2026 – November 2026)\n- Top Build Award — Leverify AI Cohort, August 2025\n- Founder & Lead AI Solutions Architect, DeepBuild AI Services\n- Chair of UNHRC & Academics Head, Air University MUN\n- Appointed Team Coordinator, University Debating Society\n- Core Member, TechBist Society`;
 
     navigator.clipboard.writeText(markdownCV);
     setCopied(true);
@@ -93,15 +93,15 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               <div>
                 <h1 className="text-3xl font-bold tracking-tight text-text-primary">{`AHMAD RAYAN QASIM`}</h1>
                 <p className="font-mono text-xs text-blue-600 dark:text-emerald-400 mt-1.5 tracking-wider uppercase font-bold">
-                  AI Engineer & Startup Founder (DeepBuild AI)
+                  AI Engineer &bull; Hackathon Winner &bull; Startup Founder (DeepBuild AI)
                 </p>
                 <p className="text-sm text-text-secondary mt-1 font-light">
-                  Multan, Pakistan &bull; iamahmadrayan@gmail.com &bull; +92 316 6461653
+                  Multan, Pakistan &bull; iamahmadrayan@gmail.com &bull; +92 316 6461653 &bull; <a href="https://linkedin.com/in/ahmad-rayan-2a1785261" target="_blank" rel="noreferrer" className="text-blue-600 dark:text-emerald-400 hover:underline">LinkedIn</a> &bull; <a href="https://ahmadrayanqasim.vercel.app" target="_blank" rel="noreferrer" className="text-blue-600 dark:text-emerald-400 hover:underline">Portfolio</a>
                 </p>
               </div>
               <div className="text-right font-mono text-xs text-text-secondary border border-border-color bg-bg-secondary p-3 rounded-lg">
                 <p className="text-text-primary font-bold">AIR UNIVERSITY MULTAN</p>
-                <p className="mt-0.5">CGPA: <span className="text-blue-600 dark:text-emerald-400 font-bold">3.55</span></p>
+                <p className="mt-0.5">CGPA: <span className="text-blue-600 dark:text-emerald-400 font-bold">3.55</span> | DSA: <span className="text-blue-600 dark:text-emerald-400 font-bold">12/12</span></p>
                 <p>BS Computer Science (2024–2028)</p>
               </div>
             </div>
@@ -116,7 +116,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   Professional Work Summary
                 </h2>
                 <p className="text-sm text-text-secondary font-light leading-relaxed font-sans">
-                  High-agency AI Systems Architect and AI Engineer with proven execution spanning enterprise RAG pipelines, FastAPI microservices, and autonomous multi-agent orchestration (n8n, Make, Apify). Founder of DeepBuild AI Services and former AI Engineering Intern at FlyRank AI, combining rigorous low-level CS foundations (C++, x86 assembly, relational schema normalization) with modern frontier model integration.
+                  High-agency AI Systems Architect and AI Engineer with proven execution spanning enterprise RAG pipelines, FastAPI microservices, and autonomous multi-agent orchestration (n8n, Make, Apify). 1st Place MLH Hackathon Winner (MandiLinkAI) and President of the Air University Startup Club (AUSC). Former Backend AI Engineering Intern at FlyRank AI and AI/ML Intern at SafeX Solutions, combining rigorous computer science foundations with production LLM pipelines.
                 </p>
               </div>
 
@@ -184,16 +184,24 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 </h2>
                 <div className="bg-bg-secondary border border-border-color p-3 rounded-lg space-y-2 text-xs">
                   <div className="border-b border-border-color pb-1.5 font-sans">
+                    <span className="font-mono text-blue-600 dark:text-emerald-400 font-bold block">🏆 1ST PLACE — MLH HACKATHON</span>
+                    <span className="text-[10px] text-text-secondary">Hacktoberfest Hack Day Multan (Oct 31, 2026). MandiLinkAI deployed live on Vercel in 60 mins.</span>
+                  </div>
+                  <div className="border-b border-border-color pb-1.5 font-sans">
+                    <span className="font-mono text-blue-600 dark:text-emerald-400 font-bold block">PRESIDENT — AUSC (2026–2027)</span>
+                    <span className="text-[10px] text-text-secondary">Air University Startup Club in coordination with Business Incubation Center (BIC).</span>
+                  </div>
+                  <div className="border-b border-border-color pb-1.5 font-sans">
                      <span className="font-mono text-blue-600 dark:text-emerald-400 font-bold block">12/12 PERFECT SCORE</span>
                     <span className="text-[10px] text-text-secondary">Maximum grade points in Data Structures & Algorithms.</span>
                   </div>
                   <div className="border-b border-border-color pb-1.5 font-sans">
                     <span className="font-mono text-blue-600 dark:text-emerald-400 font-bold block">TOP BUILD AWARD</span>
-                    <span className="text-[10px] text-text-secondary">Selected top 40 from 1,000+ applicants in Leverify AI Quest. Founded DeepBuild AI.</span>
+                    <span className="text-[10px] text-text-secondary">Selected top 40 from 1,000+ applicants in Leverify AI Cohort.</span>
                   </div>
                   <div className="font-sans">
-                    <span className="font-mono text-blue-600 dark:text-emerald-400 font-bold block">DIPLOMATIC & TEAM LEADERSHIP</span>
-                    <span className="text-[10px] text-text-secondary">Academics Head & UNHRC Chair at MUN. Debating Society Coordinator.</span>
+                    <span className="font-mono text-blue-600 dark:text-emerald-400 font-bold block">GLOBAL LEADERSHIP COHORT</span>
+                    <span className="text-[10px] text-text-secondary">Global Nobel Intern (Nobel Navigators). Academics Head & UNHRC Chair at MUN.</span>
                   </div>
                 </div>
               </div>

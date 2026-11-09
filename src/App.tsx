@@ -245,7 +245,7 @@ export default function App() {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
                 </span>
                 <span className="text-[10px] font-mono font-medium tracking-wide text-neutral-500 dark:text-neutral-400">
-                  SYSTEM CORE: ONLINE &bull; OPEN TO GLOBAL SPRINTS
+                  SYSTEM CORE: ONLINE &bull; OPEN TO REMOTE SWE / AI ENGINEERING ROLES GLOBALLY
                 </span>
               </div>
               <div className="text-[10px] font-mono text-neutral-400 dark:text-neutral-500 uppercase tracking-widest">
@@ -263,7 +263,7 @@ export default function App() {
                 
                 <div className="space-y-3">
                   <span className="text-xs font-mono font-extrabold tracking-widest text-blue-600 dark:text-blue-400 uppercase block">
-                    AI Engineer & Startup Founder
+                    3rd-Year CS Student &bull; AI Engineer &bull; Hackathon Winner &bull; Startup Founder
                   </span>
                   <div className="block">
                     <SplitText
@@ -290,7 +290,7 @@ export default function App() {
                 </div>
                 
                 <p className="text-sm text-neutral-500 dark:text-neutral-400 font-light leading-relaxed max-w-sm font-sans">
-                  AI Engineer & Founder of DeepBuild AI (Ex-FlyRank AI). Bridging core computing foundations with next-gen agentic intelligence and production-grade RAG pipelines.
+                  Backend AI Intern @ FlyRank AI &bull; 1st Place MLH Hackathon &bull; President @ AUSC &bull; Building production systems. Open to remote SWE / AI Engineering roles globally.
                 </p>
 
                 {/* Down Arrow Button styled exactly like image_0.png */}
@@ -339,7 +339,7 @@ export default function App() {
                     ABOUT ME
                   </span>
                   <p className="text-xs text-neutral-500 dark:text-neutral-400 font-sans leading-relaxed">
-                    BS Computer Science candidate at Air University (CGPA 3.55, 12/12 in DSA). Specializing in production RAG pipelines, FastAPI microservices, and autonomous multi-agent orchestration.
+                    3rd-Year CS Student at Air University (CGPA: 3.55 | DSA: 12/12). 1st Place MLH Hackathon Winner. Specializing in RAG pipelines, FastAPI microservices, and autonomous multi-agent orchestration.
                   </p>
                   <button
                     onClick={() => handleScrollToSection("trajectory")}
@@ -383,7 +383,7 @@ export default function App() {
                       <Github className="w-4.5 h-4.5" />
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/ahmadrayandev"
+                      href="https://linkedin.com/in/ahmad-rayan-2a1785261"
                       target="_blank"
                       rel="noreferrer"
                       className="text-neutral-400 dark:text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors"
@@ -605,6 +605,10 @@ export default function App() {
                           <>
                             <strong>Production AI Architecture:</strong> Standardizing strict API schemas, retrieval-backed RAG answer flows, and automated test rubrics transitioning experimental AI to predictable production.
                           </>
+                        ) : exp.company.includes("SafeX") ? (
+                          <>
+                            <strong>Production ML Pipelines:</strong> Bridging algorithmic models with automated preprocessing and variance reduction for distributed enterprise environments.
+                          </>
                         ) : exp.company.includes("Nobel") ? (
                           <>
                             <strong>Global Leadership Cohort:</strong> Engaging in weekly high-frequency cross-cultural leadership modules, strategic technological transformation, and international execution.
@@ -647,15 +651,22 @@ export default function App() {
                 key={idx}
                 className="group bg-bg-primary border border-border-color rounded-lg overflow-hidden hover:scale-[1.01] hover:border-blue-500 dark:hover:border-emerald-500 hover:shadow-sm transition-all duration-300 flex flex-col h-full"
               >
-                {/* High-resolution Image Container */}
-                <div className="relative overflow-hidden aspect-video border-b border-border-color bg-bg-secondary">
+                {/* Full-View Image Container with zero cutoffs */}
+                <div className="relative overflow-hidden h-52 sm:h-56 border-b border-border-color bg-neutral-900/40 dark:bg-neutral-950/80 flex items-center justify-center p-2">
+                  {/* Subtle blurred backdrop to complement natural image boundaries */}
+                  <img 
+                    src={ach.image} 
+                    alt=""
+                    aria-hidden="true"
+                    referrerPolicy="no-referrer"
+                    className="absolute inset-0 w-full h-full object-cover blur-md opacity-25 scale-110 pointer-events-none select-none"
+                  />
                   <img 
                     src={ach.image} 
                     alt={`${ach.role} - ${ach.organization}`}
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="relative z-10 max-h-full max-w-full object-contain rounded shadow-sm group-hover:scale-[1.02] transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                 </div>
 
                 {/* Content Block */}
@@ -675,7 +686,7 @@ export default function App() {
                   {/* Verification action */}
                   <div className="pt-2 border-t border-border-color flex items-center justify-between">
                     <a 
-                      href={ach.image}
+                      href={ach.credentialUrl || ach.image}
                       target="_blank"
                       rel="noreferrer"
                       className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-600 dark:text-emerald-400 hover:underline flex items-center gap-1"
@@ -901,32 +912,45 @@ export default function App() {
                       <span className="text-text-secondary">
                         PROJECT // 0{idx + 1}
                       </span>
-                      <span className="text-blue-500 dark:text-emerald-400 font-bold uppercase tracking-wider text-[10px]">
-                        {proj.category}
-                      </span>
+                      {proj.badge ? (
+                        <span className="text-blue-600 dark:text-emerald-400 font-bold uppercase tracking-wider text-[10px] bg-blue-500/10 dark:bg-emerald-500/10 px-2 py-0.5 rounded border border-blue-500/20 dark:border-emerald-500/20">
+                          {proj.badge}
+                        </span>
+                      ) : (
+                        <span className="text-blue-500 dark:text-emerald-400 font-bold uppercase tracking-wider text-[10px]">
+                          {proj.category}
+                        </span>
+                      )}
                     </div>
 
                     <div className="space-y-1">
                       <div className="flex items-start justify-between gap-2">
-                        <h3 className="text-lg sm:text-xl font-bold tracking-tight text-text-primary group-hover:text-blue-600 dark:group-hover:text-emerald-400 transition-colors">
-                          {proj.title}
-                        </h3>
+                        <div className="space-y-0.5">
+                          <h3 className="text-lg sm:text-xl font-bold tracking-tight text-text-primary group-hover:text-blue-600 dark:group-hover:text-emerald-400 transition-colors">
+                            {proj.title}
+                          </h3>
+                          {proj.subtitle && (
+                            <p className="text-xs font-mono font-bold text-blue-600 dark:text-emerald-400">
+                              {proj.subtitle}
+                            </p>
+                          )}
+                        </div>
                         {/* Interactive dynamic link */}
                         <a 
-                          href={proj.githubUrl || "#contact"}
-                          target={proj.githubUrl ? "_blank" : undefined}
-                          rel={proj.githubUrl ? "noreferrer" : undefined}
-                          onClick={!proj.githubUrl ? (e) => {
+                          href={proj.githubUrl || proj.liveUrl || "#contact"}
+                          target={proj.githubUrl || proj.liveUrl ? "_blank" : undefined}
+                          rel={proj.githubUrl || proj.liveUrl ? "noreferrer" : undefined}
+                          onClick={!proj.githubUrl && !proj.liveUrl ? (e) => {
                             e.preventDefault();
                             handleScrollToSection("contact-field");
                           } : undefined}
                           className="p-1 text-text-secondary hover:text-blue-500 dark:hover:text-emerald-400 transition-colors cursor-pointer shrink-0 mt-0.5"
-                          title={proj.githubUrl ? "Open GitHub Repository" : "Ask for architecture walk-through"}
+                          title={proj.githubUrl ? "Open GitHub Repository" : proj.liveUrl ? "Open Live App" : "Ask for architecture walk-through"}
                         >
                           <ArrowUpRight className="w-4 h-4" />
                         </a>
                       </div>
-                      <p className="text-xs sm:text-sm text-text-secondary leading-normal font-light font-sans">
+                      <p className="text-xs sm:text-sm text-text-secondary leading-normal font-light font-sans pt-1">
                         {proj.description}
                       </p>
                     </div>
@@ -1209,7 +1233,7 @@ export default function App() {
               <span>GitHub</span>
             </a>
             <a 
-              href="https://www.linkedin.com/in/ahmadrayandev" 
+              href="https://linkedin.com/in/ahmad-rayan-2a1785261" 
               target="_blank" 
               rel="noreferrer" 
               className="text-text-secondary hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-1.5 font-bold uppercase tracking-wide cursor-pointer"

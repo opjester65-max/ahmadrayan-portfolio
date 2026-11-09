@@ -75,12 +75,12 @@ export const LinkedInBadge: React.FC<LinkedInBadgeProps> = ({
         >
           <a
             className="badge-base__link LI-simple-link inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-bg-secondary border border-border-color text-xs font-mono font-semibold text-text-primary hover:text-[#0A66C2] transition-colors shadow-xs"
-            href="https://pk.linkedin.com/in/ahmadrayandev?trk=profile-badge"
+            href="https://linkedin.com/in/ahmad-rayan-2a1785261?trk=profile-badge"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Linkedin className="w-4 h-4 text-[#0A66C2]" />
-            <span>Ahmad Rayan Qasim (@ahmadrayandev)</span>
+            <span>Ahmad Rayan Qasim</span>
             <ExternalLink className="w-3 h-3 text-text-secondary" />
           </a>
         </div>
@@ -88,9 +88,9 @@ export const LinkedInBadge: React.FC<LinkedInBadgeProps> = ({
 
       {/* Footer Info Strip */}
       <div className="mt-3 pt-2.5 border-t border-border-color flex items-center justify-between text-[10px] font-mono text-text-secondary">
-        <span>Vanity: @ahmadrayandev</span>
+        <span>Vanity: @ahmad-rayan-2a1785261</span>
         <a
-          href="https://www.linkedin.com/in/ahmadrayandev"
+          href="https://linkedin.com/in/ahmad-rayan-2a1785261"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-[#0A66C2] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1 font-semibold"
