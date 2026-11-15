@@ -75,7 +75,7 @@ export const LinkedInBadge: React.FC<LinkedInBadgeProps> = ({
         >
           <a
             className="badge-base__link LI-simple-link inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-bg-secondary border border-border-color text-xs font-mono font-semibold text-text-primary hover:text-[#0A66C2] transition-colors shadow-xs"
-            href="https://linkedin.com/in/ahmad-rayan-2a1785261?trk=profile-badge"
+            href="https://www.linkedin.com/in/ahmadrayandev?trk=profile-badge"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -88,9 +88,9 @@ export const LinkedInBadge: React.FC<LinkedInBadgeProps> = ({
 
       {/* Footer Info Strip */}
       <div className="mt-3 pt-2.5 border-t border-border-color flex items-center justify-between text-[10px] font-mono text-text-secondary">
-        <span>Vanity: @ahmad-rayan-2a1785261</span>
+        <span>Vanity: @ahmadrayandev</span>
         <a
-          href="https://linkedin.com/in/ahmad-rayan-2a1785261"
+          href="https://www.linkedin.com/in/ahmadrayandev"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-[#0A66C2] dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1 font-semibold"

@@ -648,7 +648,7 @@ export default function App() {
                       <Github className="w-4 h-4" />
                     </a>
                     <a
-                      href="https://linkedin.com/in/ahmad-rayan-2a1785261"
+                      href="https://www.linkedin.com/in/ahmadrayandev"
                       target="_blank"
                       rel="noreferrer"
                       className="p-2 rounded-lg bg-neutral-800/50 hover:bg-emerald-600/20 text-neutral-400 hover:text-white border border-neutral-700/60 hover:border-emerald-500/40 transition-all"
@@ -1593,7 +1593,7 @@ export default function App() {
               <span>GitHub</span>
             </a>
             <a 
-              href="https://linkedin.com/in/ahmad-rayan-2a1785261" 
+              href="https://www.linkedin.com/in/ahmadrayandev" 
               target="_blank" 
               rel="noreferrer" 
               className="text-text-secondary hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-1.5 font-bold uppercase tracking-wide cursor-pointer"
