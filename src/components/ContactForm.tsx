@@ -192,7 +192,7 @@ export default function ContactForm({ darkMode = true }: ContactFormProps) {
                 <span>GitHub</span>
               </a>
               <a 
-                href="https://www.linkedin.com/in/ahmadrayandev" 
+                href="https://linkedin.com/in/ahmad-rayan-2a1785261" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-1.5 px-2.5 py-2 bg-bg-secondary hover:bg-bg-primary border border-border-color text-xs text-text-primary rounded transition-all cursor-pointer"
