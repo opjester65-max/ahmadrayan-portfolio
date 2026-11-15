@@ -1593,7 +1593,7 @@ export default function App() {
               <span>GitHub</span>
             </a>
             <a 
-              href="https://www.linkedin.com/in/ahmadrayandev" 
+              href="https://linkedin.com/in/ahmad-rayan-2a1785261" 
               target="_blank" 
               rel="noreferrer" 
               className="text-text-secondary hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-1.5 font-bold uppercase tracking-wide cursor-pointer"
